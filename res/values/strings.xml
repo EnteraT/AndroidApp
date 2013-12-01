@@ -1,8 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">EnteraT</string>
-    <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">EnteraT</string>    
+    
+    <string name="row">Fila</string>
+    
+    <string name="user_txt">Usuario: </string>
+    <string name="pass_txt">Contraseña: </string>
+    <string name="sigin_txt">Entrar</string>
+    
+    <string name="no_internet_connection">No hay conexión a Internet</string>
+    
+    <string name="profesor_txt">Profesor: </string>
+    <string name="alumno_txt">Alumno: </string>
+    
+    <string name="facebook_txt">facebook</string>
+    <string name="tareas_txt">Tareas</string>
+    <string name="control_txt">Exámenes</string>
+    <string name="circularsButton">Circulares</string>
+    <string name="notesbutton">Notas</string>    
+    <string name="anunciosbutton">Anuncios</string>
+    <string name="faltasbutton">Faltas de asistencia</string>
+    <string name="calendariobutton">Calendario</string>    
+    <string name="informaciobutton">Información</string>
+    <string name="asignaturasButton">Asignaturas</string>    
+    <string name="menu_settings">Configuración</string>
+    <string name="contingut_txt">Contenido</string>
+    
+    <string name="assignatura_txt">Asignatura</string>
+    <string-array name="assignatura_array">
+        <item>Matemáticas</item>
+        <item>Naturales</item>
+        <item>Valenciano</item>
+        <item>Castellno</item>
+        <item>Inglés</item>
+        <item>Sociales</item>
+        <item>Música</item>
+        <item>Ed. Física</item>
+        <item>Informática</item>
+        <item>Francés</item>
+    </string-array>
+
+    <string name="curs_txt">Curso / Grupo</string>
+    <string-array name="curs_array">
+        <item>1ero ESO</item>
+        <item>2ndo ESO</item>
+        <item>3ero ESO</item>
+        <item>4rto ESO</item>
+    </string-array>
+
+    <string name="data_entrega_txt">Fecha entrega</string>
+    <string name="data_control_txt">Fecha exámen</string>
+    <string name="publicar_txt">Publicar</string>
+    <string name="publicar_deure_ok_txt">Tarea publicada correctamente</string>
+    <string name="publicar_control_ok_txt">Examen publicado correctamente</string>
+    
+    <string name="login_ok_txt">Login Ok</string>
+    <string name="login_no_ok_txt">Datos erróneos</string>
 
 </resources>

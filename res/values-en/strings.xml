@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="row">Fila</string>
+    <string name="app_name">EnteraT</string> 
+    <string name="action_settings">Settings</string>
+    <string name="eldrac_txt">eldrac</string>
+    <string name="facebook_txt">facebook</string>
+    <string name="deures_txt">Tasks</string>
+    <string name="control_txt">Exams</string>
+    <string name="circularsButton">Circular</string>
+    <string name="notesbutton">Notes</string>
+    <string name="informaciobutton">Information</string>
+    <string name="asignaturasButton">Subjects</string>    
+    <string name="menu_settings">Settings</string>
+    <string name="contingut_txt">Content</string>
+    <string name="assignatura_txt">Subject</string>    
+
+    <string-array name="assignatura_array">
+        <item>Matemàtiques</item>
+        <item>Naturals</item>
+        <item>Valencià</item>
+        <item>Castellà</item>
+        <item>Anglés</item>
+        <item>Socials</item>
+        <item>Música</item>
+        <item>Ed. Física</item>
+        <item>Informàtica</item>
+        <item>Francés</item>
+    </string-array>
+
+    <string name="curs_txt">Course / Group</string>
+
+    <string-array name="curs_array">
+        <item>1er ESO</item>
+        <item>2on ESO</item>
+        <item>3er ESO</item>
+        <item>4rt ESO</item>
+    </string-array>
+
+    <string name="data_entrega_txt">Deadline</string>
+    <string name="data_control_txt">Date control</string>
+    <string name="publicar_txt">Submit</string>
+    <string name="publicar_deure_ok_txt">Deure publicat correctament</string>
+    <string name="publicar_control_ok_txt">Control publicat correctament</string>
+    
+
+</resources>
