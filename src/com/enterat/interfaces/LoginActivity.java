@@ -20,6 +20,7 @@ public class LoginActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		
+		//comentario a modificar
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 		
