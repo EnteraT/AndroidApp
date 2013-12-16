@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="st_main_button">
+       <item name="android:background">@drawable/shape_creditos</item>
+       <item name="android:textSize">@dimen/bini15</item>
+      <!-- <item name="android:alpha">0.5</item> tenemos problemas con el numero de API -->
+       <item name="android:gravity">bottom|center_horizontal</item>
+       <item name="android:layout_width">120dp</item>
+       <item name="android:layout_height">70dp</item>
+       <item name="android:typeface">sans</item>
+       <item name="android:shadowColor">#FF808080</item>
+       <item name="android:shadowRadius">1.5</item>
+       <item name="android:shadowDx">1</item>
+       <item name="android:shadowDy">2</item>
+       
+       
+    </style>
+    
+     <style name="st_main_spinner">
+       <item name="android:background">@drawable/shape_spinner</item>
+       <item name="android:textSize">@dimen/bini15</item>
+      <!-- <item name="android:alpha">0.5</item> tenemos problemas con el numero de API -->
+     
+       
+       
+       
+    </style>
+ 
 
     <!--
         Base application theme, dependent on API level. This theme is replaced

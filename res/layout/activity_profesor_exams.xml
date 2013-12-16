@@ -16,21 +16,23 @@
 
          <LinearLayout
              android:layout_width="match_parent"
-             android:layout_height="wrap_content"
+             android:layout_height="437dp"
              android:orientation="vertical" >
              
      <TextView
-        android:id="@+id/assignaturaTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/assignatura_txt"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+         android:id="@+id/assignaturaTextView"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/assignatura_txt"
+         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Spinner
         android:id="@+id/assignaturaSpinner"
+        style="@style/st_main_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/assignatura_array" />  
+        android:alpha="0.75"
+        android:entries="@array/assignatura_array" />
 
     <TextView
         android:id="@+id/cursTextView"
@@ -41,9 +43,11 @@
 
     <Spinner
         android:id="@+id/cursSpinner"
+        style="@style/st_main_spinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"         
-        android:entries="@array/curs_array" />    
+        android:layout_height="wrap_content"
+        android:alpha="0.75"
+        android:entries="@array/curs_array" />
     
     <TextView
         android:id="@+id/dataTextView"
@@ -73,12 +77,12 @@
 
     <Button
         android:id="@+id/publicarButton"
+        style="@style/st_main_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"
-        android:text="@string/publicar_txt"
-        android:onClick="publicarControlClick" />
-
+        android:onClick="publicarControlClick"
+        android:text="@string/publicar_txt" />
 
          </LinearLayout>
          

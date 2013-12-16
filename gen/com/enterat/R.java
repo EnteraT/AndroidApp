@@ -23,17 +23,20 @@ public final class R {
          */
         public static final int activity_horizontal_margin=0x7f040000;
         public static final int activity_vertical_margin=0x7f040001;
+        public static final int bini15=0x7f040002;
     }
     public static final class drawable {
         public static final int app_background=0x7f020000;
         public static final int fondo=0x7f020001;
         public static final int ic_facebook=0x7f020002;
         public static final int ic_launcher=0x7f020003;
+        public static final int shape_creditos=0x7f020004;
+        public static final int shape_spinner=0x7f020005;
     }
     public static final class id {
         public static final int SignInbutton=0x7f090004;
         public static final int alumnoTextView=0x7f090005;
-        public static final int anuncionsButton=0x7f09001c;
+        public static final int anuncionsButton=0x7f09001b;
         public static final int asignaturasButton=0x7f090009;
         public static final int assignaturaSpinner=0x7f090013;
         public static final int assignaturaTextView=0x7f090012;
@@ -57,7 +60,7 @@ public final class R {
         public static final int notificacioButton=0x7f09000f;
         public static final int passEditText=0x7f090003;
         public static final int passwordTextView=0x7f090002;
-        public static final int profesorTextView=0x7f09001b;
+        public static final int profesorTextView=0x7f09001c;
         public static final int publicarButton=0x7f09001a;
         public static final int scrollView1=0x7f090011;
         public static final int tvDateListViewItem=0x7f09001f;
@@ -102,8 +105,6 @@ public final class R {
         public static final int data_control_txt=0x7f050017;
         public static final int data_entrega_txt=0x7f050016;
         public static final int deures_txt=0x7f05001f;
-        public static final int dummy_button=0x7f050021;
-        public static final int dummy_content=0x7f050022;
         public static final int eldrac_txt=0x7f05001e;
         public static final int facebook_txt=0x7f050008;
         public static final int faltasbutton=0x7f05000e;
@@ -146,9 +147,13 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f070002;
         /**  Application theme. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f070003;
+        public static final int st_main_button=0x7f070000;
+        /**  <item name="android:alpha">0.5</item> tenemos problemas con el numero de API 
+         */
+        public static final int st_main_spinner=0x7f070001;
     }
 }

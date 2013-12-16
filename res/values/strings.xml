@@ -20,7 +20,7 @@
     <string name="circularsButton">Circulares</string>
     <string name="notesbutton">Notas</string>    
     <string name="anunciosbutton">Anuncios</string>
-    <string name="faltasbutton">Faltas de asistencia</string>
+    <string name="faltasbutton">Incidencias</string>
     <string name="calendariobutton">Calendario</string>    
     <string name="informaciobutton">Información</string>
     <string name="asignaturasButton">Asignaturas</string>    
