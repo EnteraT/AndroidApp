@@ -44,5 +44,7 @@
     <string name="publicar_deure_ok_txt">Deure publicat correctament</string>
     <string name="publicar_control_ok_txt">Control publicat correctament</string>
     
+    <string name="login_ok_txt">Login Ok</string>
+    <string name="login_no_ok_txt">Wrong data</string>
 
 </resources>
