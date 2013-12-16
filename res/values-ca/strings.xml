@@ -44,8 +44,7 @@
     <string name="publicar_deure_ok_txt">Deure publicat correctament</string>
     <string name="publicar_control_ok_txt">Control publicat correctament</string>
     <string name="title_activity_inicio">InicioActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    
     
     <string name="login_ok_txt">Login Ok</string>
     <string name="login_no_ok_txt">Dades errònees</string>
