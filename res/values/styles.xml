@@ -34,6 +34,7 @@
        <item name="android:shadowRadius">1.5</item>
        <item name="android:shadowDx">1</item>
        <item name="android:shadowDy">2</item>
+        </style>
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
