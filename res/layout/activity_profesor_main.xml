@@ -15,24 +15,12 @@
         android:layout_weight="0.17" >
 
         <Button
-            android:id="@+id/anuncionsButton"
-            style="@style/st_main_button"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginBottom="68dp"
-             android:drawableTop="@android:drawable/ic_popup_reminder"
-            android:alpha="0.75"
-            android:onClick="anunciosClick"
-            android:text="@string/anunciosbutton" />
-
-        <Button
             android:id="@+id/controlButton"
             style="@style/st_main_button"
-            android:layout_alignBaseline="@+id/anuncionsButton"
-            android:layout_alignBottom="@+id/anuncionsButton"
-             android:drawableTop="@android:drawable/ic_menu_edit"
             android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
             android:alpha="0.75"
+            android:drawableTop="@android:drawable/ic_menu_edit"
             android:onClick="examClick"
             android:text="@string/control_txt" />
 
@@ -40,18 +28,28 @@
             android:id="@+id/faltasButton"
             style="@style/st_main_button"
             android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="51dp"
-             android:drawableTop="@android:drawable/stat_notify_error"
+            android:layout_below="@+id/controlButton"
             android:alpha="0.75"
+            android:drawableTop="@android:drawable/stat_notify_error"
             android:onClick="faltasClick"
             android:text="@string/faltasbutton" />
 
         <Button
+            android:id="@+id/anuncionsButton"
+            style="@style/st_main_button"
+            android:layout_above="@+id/faltasButton"
+            android:layout_alignParentLeft="true"
+            android:alpha="0.75"
+            android:drawableTop="@android:drawable/ic_popup_reminder"
+            android:onClick="anunciosClick"
+            android:text="@string/anunciosbutton" />
+
+        <Button
             android:id="@+id/deuresButton"
             style="@style/st_main_button"
+            android:layout_alignBaseline="@+id/faltasButton"
+            android:layout_alignBottom="@+id/faltasButton"
             android:layout_alignParentLeft="true"
-            android:layout_alignTop="@+id/faltasButton"
             android:alpha="0.75"
             android:drawableTop="@android:drawable/stat_notify_chat"
             android:onClick="tasksClick"

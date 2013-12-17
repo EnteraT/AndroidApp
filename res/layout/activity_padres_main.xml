@@ -1,5 +1,4 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,7 +15,7 @@
 
         <TextView
             android:id="@+id/alumnoTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.77"
             android:text="@string/alumno_txt"
@@ -29,72 +28,48 @@
             android:contentDescription="@string/eldrac_txt"
             android:onClick="webClick"
             android:src="@drawable/ic_launcher" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/facebook_txt"
-            android:onClick="facebookClick"
-            android:src="@drawable/ic_facebook" />
     </LinearLayout>
 
-<Button
-    android:id="@+id/infoButton"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_horizontal"
-    android:onClick="infoClick"
-    android:text="@string/informaciobutton" />
+    <ExpandableListView
+        android:id="@+id/expandableListView1"
+        android:layout_width="wrap_content"
+        android:layout_height="135dp" >
+    </ExpandableListView>
 
-	<Button
-    android:id="@+id/asignaturasButton"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:onClick="asignaturasClick"
-    android:text="@string/asignaturasButton" />
+    <Button
+        android:id="@+id/asignaturasButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="asignaturasClick"
+        android:text="@string/asignaturasButton" />
 
-<Button
-    android:id="@+id/deuresButton"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_vertical"
-    android:onClick="tasksClick"
-    android:text="@string/tareas_txt" />
+    <Button
+        android:id="@+id/deuresButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:onClick="tasksClick"
+        android:text="@string/tareas_txt" />
 
-<Button
-    android:id="@+id/controlButton"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:onClick="examClick"
-    android:text="@string/control_txt" />
+    <Button
+        android:id="@+id/controlButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="examClick"
+        android:text="@string/control_txt" />
 
-<Button
-    android:id="@+id/notesButton"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:onClick="notesClick"
-    android:text="@string/notesbutton" />
+    <Button
+        android:id="@+id/notesButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="notesClick"
+        android:text="@string/notesbutton" />
 
-<Button
-    android:id="@+id/calendarioButton"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:onClick="calendarioClick"
-    android:text="@string/calendariobutton" />
-
-<Button
-    android:id="@+id/faltasButton"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:onClick="faltasClick"
-    android:text="@string/faltasbutton" />
-
-<Button
-    android:id="@+id/notificacioButton"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:onClick="notificationClick"
-    android:text="@string/circularsButton" />
+    <Button
+        android:id="@+id/faltasButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="faltasClick"
+        android:text="@string/faltasbutton" />
 
 </LinearLayout>
