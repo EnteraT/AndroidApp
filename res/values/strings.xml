@@ -14,6 +14,8 @@
     <string name="profesor_txt">Profesor: </string>
     <string name="alumno_txt">Alumno: </string>
     
+    <!-- Botones-->
+    
     <string name="facebook_txt">facebook</string>
     <string name="tareas_txt">Tareas</string>
     <string name="control_txt">Exámenes</string>
@@ -23,9 +25,33 @@
     <string name="faltasbutton">Incidencias</string>
     <string name="calendariobutton">Calendario</string>    
     <string name="informaciobutton">Información</string>
-    <string name="asignaturasButton">Asignaturas</string>    
-    <string name="menu_settings">Configuración</string>
+    <string name="asignaturasButton">Asignaturas</string>     
     <string name="contingut_txt">Contenido</string>
+    <string name="asignaturabutton">Asignatura</string>
+    <string name="default_name_t">Nombre del profesor</string>
+    <string name="publicar_txt">Publicar</string>
+    <string name="b_asignaturas_p">Asignaturas</string>
+    <string name="b_tareas_p">Tareas</string>
+    <string name="b_incidencias_p">Incidencias</string>
+    <string name="b_anuncios_p">Anuncios</string>
+    <string name="b_examenes_p">Exámenes</string>
+    
+    
+    <!-- Text View -->
+    
+    <string name="all_class">Toda la clase</string>
+    <string name="type_txt">¿Qué vas a añadir?</string>
+    <string name="asignatura_txt">¿Para qué asignatura?</string>
+    <string name="data_entrega_txt">Fecha entrega</string>
+    <string name="data_control_txt">Fecha exámen</string>
+    <string name="data_txt">Fecha </string>
+    
+    
+    <!-- Menus -->
+    
+    <string name="menu_settings">Configuración</string>
+    <string name="menu_cerrar_sesion">Cerrar sesión</string>
+    
     
     <string name="assignatura_txt">Asignatura</string>
     <string-array name="assignatura_array">
@@ -49,9 +75,8 @@
         <item>4rto ESO</item>
     </string-array>
 
-    <string name="data_entrega_txt">Fecha entrega</string>
-    <string name="data_control_txt">Fecha exámen</string>
-    <string name="publicar_txt">Publicar</string>
+   
+    
     <string name="publicar_deure_ok_txt">Tarea publicada correctamente</string>
     <string name="publicar_control_ok_txt">Examen publicado correctamente</string>
     

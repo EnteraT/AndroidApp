@@ -20,14 +20,14 @@
              android:orientation="vertical" >
              
      <TextView
-         android:id="@+id/assignaturaTextView"
+         android:id="@+id/Type_TextView"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:text="@string/assignatura_txt"
+         android:text="@string/type_txt"
          android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Spinner
-        android:id="@+id/assignaturaSpinner"
+        android:id="@+id/Tipo_Spinner_t"
         style="@style/st_main_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,14 +35,14 @@
         android:entries="@array/assignatura_array" />
 
     <TextView
-        android:id="@+id/cursTextView"
+        android:id="@+id/asignatura_TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/curs_txt"
+        android:text="@string/asignatura_txt"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Spinner
-        android:id="@+id/cursSpinner"
+        android:id="@+id/asignatura_Spinner_t"
         style="@style/st_main_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,11 +53,11 @@
         android:id="@+id/dataTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/data_control_txt"
+        android:text="@string/data_txt"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <DatePicker
-        android:id="@+id/entregaDatePicker"
+        android:id="@+id/DatePicker_t"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -69,23 +69,42 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/deuresEditText"
+        android:id="@+id/contenido_t"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
          android:inputType="textMultiLine" >   
     </EditText>
 
-    <Button
-        android:id="@+id/publicarButton"
-        style="@style/st_main_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical|center_horizontal"
-        android:onClick="publicarControlClick"
-        android:text="@string/publicar_txt" />
-
          </LinearLayout>
          
      </ScrollView>
+
+    <TextView
+        android:id="@+id/all_class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/publicarButton"
+        android:layout_alignBottom="@+id/publicarButton"
+        android:layout_alignLeft="@+id/scrollView1"
+        android:text="@string/all_class" />
+
+    <CheckBox
+        android:id="@+id/check_all_class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/publicarButton"
+        android:layout_toRightOf="@+id/all_class" />
+
+    <Button
+        android:id="@+id/publicarButton"
+        style="@style/st_main_button"
+        android:alpha="0.75"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/scrollView1"
+        android:layout_marginBottom="32dp"
+        android:onClick="publicarControlClick"
+        android:text="@string/publicar_txt" />
 
  </RelativeLayout>

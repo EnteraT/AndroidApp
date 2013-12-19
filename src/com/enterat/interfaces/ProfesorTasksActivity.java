@@ -12,7 +12,7 @@ public class ProfesorTasksActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_profesor_tasks);
+		setContentView(R.layout.activity_profesor_write);
 	}
 
 	public void publicarDeureClick(View v) {

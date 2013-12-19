@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,13 +9,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ProfesorMainActivity" >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.17" >
-
         <Button
-            android:id="@+id/controlButton"
+            android:id="@+id/b_examen_t"
             style="@style/st_main_button"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
@@ -25,19 +20,19 @@
             android:text="@string/control_txt" />
 
         <Button
-            android:id="@+id/faltasButton"
+            android:id="@+id/b_incidencia_t"
             style="@style/st_main_button"
             android:layout_alignParentRight="true"
-            android:layout_below="@+id/controlButton"
+            android:layout_below="@+id/b_examen_t"
             android:alpha="0.75"
             android:drawableTop="@android:drawable/stat_notify_error"
             android:onClick="faltasClick"
             android:text="@string/faltasbutton" />
 
         <Button
-            android:id="@+id/anuncionsButton"
+            android:id="@+id/b_anuncios_t"
             style="@style/st_main_button"
-            android:layout_above="@+id/faltasButton"
+            android:layout_above="@+id/b_incidencia_t"
             android:layout_alignParentLeft="true"
             android:alpha="0.75"
             android:drawableTop="@android:drawable/ic_popup_reminder"
@@ -45,10 +40,10 @@
             android:text="@string/anunciosbutton" />
 
         <Button
-            android:id="@+id/deuresButton"
+            android:id="@+id/b_tareas_t"
             style="@style/st_main_button"
-            android:layout_alignBaseline="@+id/faltasButton"
-            android:layout_alignBottom="@+id/faltasButton"
+            android:layout_alignBaseline="@+id/b_incidencia_t"
+            android:layout_alignBottom="@+id/b_incidencia_t"
             android:layout_alignParentLeft="true"
             android:alpha="0.75"
             android:drawableTop="@android:drawable/stat_notify_chat"
@@ -56,29 +51,36 @@
             android:text="@string/tareas_txt"
             android:textStyle="normal" />
 
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        <Button
+            android:id="@+id/b_asignatura_t"
+            style="@style/st_main_button"
+            android:alpha="0.75"
+            android:layout_width="100dp"
+			android:layout_height="50dp"
+            android:layout_below="@+id/b_incidencia_t"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="68dp"
+            android:text="@string/asignaturabutton" />
 
         <TextView
             android:id="@+id/profesorTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.77"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/b_asignatura_t"
+            android:layout_marginTop="60dp"
             android:text="@string/profesor_txt"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <ImageView
-            android:id="@+id/imageView1"
+        <TextView
+            android:id="@+id/nombre_t"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.81"
-            android:contentDescription="@string/eldrac_txt"
-            android:onClick="webClick"
-            android:src="@drawable/ic_launcher" />
+            android:layout_alignBaseline="@+id/profesorTextView"
+            android:layout_alignBottom="@+id/profesorTextView"
+            android:layout_toRightOf="@+id/profesorTextView"
+            android:hint="@string/default_name_t"/>
 
-    </LinearLayout>
+   
 
-</LinearLayout>
+</RelativeLayout>
