@@ -16,17 +16,18 @@
             android:layout_alignParentTop="true"
             android:alpha="0.75"
             android:drawableTop="@android:drawable/ic_menu_edit"
-            android:onClick="examClick"
+            android:onClick="publicarExamen"
             android:text="@string/control_txt" />
 
         <Button
+            
             android:id="@+id/b_incidencia_t"
             style="@style/st_main_button"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/b_examen_t"
             android:alpha="0.75"
             android:drawableTop="@android:drawable/stat_notify_error"
-            android:onClick="faltasClick"
+            android:onClick="publicarIncidencia"
             android:text="@string/faltasbutton" />
 
         <Button
@@ -36,7 +37,7 @@
             android:layout_alignParentLeft="true"
             android:alpha="0.75"
             android:drawableTop="@android:drawable/ic_popup_reminder"
-            android:onClick="anunciosClick"
+            android:onClick="publicarAnuncio"
             android:text="@string/anunciosbutton" />
 
         <Button
@@ -47,18 +48,19 @@
             android:layout_alignParentLeft="true"
             android:alpha="0.75"
             android:drawableTop="@android:drawable/stat_notify_chat"
-            android:onClick="tasksClick"
+            android:onClick="publicarTarea"
             android:text="@string/tareas_txt"
             android:textStyle="normal" />
 
         <Button
             android:id="@+id/b_asignatura_t"
             style="@style/st_main_button"
-            android:alpha="0.75"
-            android:drawableTop="@android:drawable/ic_menu_myplaces"
             android:layout_below="@+id/b_incidencia_t"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="68dp"
+            android:alpha="0.75"
+            android:drawableTop="@android:drawable/ic_menu_myplaces"
+            android:onClick="verAsignatura"
             android:text="@string/asignaturabutton" />
 
         <TextView

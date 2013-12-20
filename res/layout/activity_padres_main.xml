@@ -35,17 +35,21 @@
     <Button
         android:id="@+id/b_asignaturas_p"
         style="@style/st_main_button"
-        android:alpha="0.75"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:alpha="0.75"
+        android:onClick="verAsignatura_p"
         android:text="@string/b_asignaturas_p" />
+
     <Button
         android:id="@+id/b_tareas_p"
         style="@style/st_main_button"
-        android:alpha="0.75"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:alpha="0.75"
+        android:onClick="verTarea"
         android:text="@string/b_tareas_p" />
+
     <Button
         android:id="@+id/b_incidencias_p"
         style="@style/st_main_button"
@@ -60,14 +64,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/b_anuncios_p" />
+
     <Button
         android:id="@+id/b_exam_p"
         style="@style/st_main_button"
-        android:alpha="0.75"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:alpha="0.75"
+        android:onClick="verExamen"
         android:text="@string/b_examenes_p" />
-    
 	
 	</LinearLayout>
 	</ScrollView>
