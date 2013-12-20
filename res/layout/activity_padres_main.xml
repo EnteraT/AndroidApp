@@ -12,10 +12,13 @@
     	android:layout_width="match_parent"
     	android:layout_height="match_parent"
     	android:orientation="vertical" >
+
     <Spinner
         android:id="@+id/hijo_spinner_P"
+        style="@style/st_main_spinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="58dp"
+        android:alpha="0.75" />
     
     <ScrollView
         android:id="@+id/scroll_incidencias_p"

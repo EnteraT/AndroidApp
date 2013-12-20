@@ -88,16 +88,9 @@
         android:layout_alignLeft="@+id/scrollView1"
         android:text="@string/all_class" />
 
-    <CheckBox
-        android:id="@+id/check_all_class"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/publicarButton"
-        android:layout_toRightOf="@+id/all_class" />
-
     <Button
         android:id="@+id/publicarButton"
-        style="@style/st_main_button"
+        style="@style/st_main_button_publicar"
         android:alpha="0.75"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -106,5 +99,13 @@
         android:layout_marginBottom="32dp"
         android:onClick="publicarControlClick"
         android:text="@string/publicar_txt" />
+
+    <CheckBox
+        android:id="@+id/check_all_class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/all_class"
+        android:layout_alignBottom="@+id/all_class"
+        android:layout_toRightOf="@+id/all_class" />
 
  </RelativeLayout>

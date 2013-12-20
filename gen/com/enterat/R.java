@@ -31,7 +31,8 @@ public final class R {
         public static final int ic_facebook=0x7f020002;
         public static final int ic_launcher=0x7f020003;
         public static final int shape_button_profesor=0x7f020004;
-        public static final int shape_spinner=0x7f020005;
+        public static final int shape_button_publicar=0x7f020005;
+        public static final int shape_spinner=0x7f020006;
     }
     public static final class id {
         public static final int DatePicker_t=0x7f09001d;
@@ -187,14 +188,15 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070003;
+        public static final int AppBaseTheme=0x7f070004;
         /**  Application theme. 
          */
-        public static final int AppTheme=0x7f070004;
+        public static final int AppTheme=0x7f070005;
         public static final int st_main_button=0x7f070000;
-        public static final int st_main_button_padre=0x7f070002;
+        public static final int st_main_button_padre=0x7f070003;
+        public static final int st_main_button_publicar=0x7f070001;
         /**  <item name="android:alpha">0.5</item> tenemos problemas con el numero de API 
          */
-        public static final int st_main_spinner=0x7f070001;
+        public static final int st_main_spinner=0x7f070002;
     }
 }
