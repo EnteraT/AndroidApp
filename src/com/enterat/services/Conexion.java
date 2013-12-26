@@ -27,21 +27,21 @@ import com.enterat.bda.Usuario;
 
 public class Conexion {
 
-	//Constantes para indicar el tipo de usuario de la aplicaciï¿½n
+	//Constantes para indicar el tipo de usuario de la aplicacion
 	public static final int PROFESOR = 1;
 	public static final int PADRE    = 2;
 	
 	//URL del directorio donde se encuentran los servicios del servidor
 	private final static String url="http://www.appservices.eshost.es/servicioweb/";
 	
-	//Comprobar si hay conexiï¿½n a INTERNET !!!
+	//Comprobar si hay conexion a INTERNET !!!
 	public static boolean isConnected(Context context) {
 		ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo info = manager.getActiveNetworkInfo();
 		return ((info != null) && info.isConnected());
 	}
 		
-	//Mï¿½todo genï¿½rico para obtener JSON para cualquier servicio
+	//Metodo generico para obtener JSON para cualquier servicio
 	private static JSONObject obtenerJsonDelServicio(List<NameValuePair> pairs, String servicio) throws ClientProtocolException, IOException, JSONException {
 		
 		HttpClient client = new DefaultHttpClient();		
@@ -84,6 +84,9 @@ public class Conexion {
 			//Obtener JSON
 			json = obtenerJsonDelServicio(pairs, "service.comprobarDatosLogin.php");
 			
+			//TODO: si la función obtenerJsonDelServicio devolviera el BufferedReader, se podria utilizar
+			//GSON para hacer match con las clases de los objetos que devuelva el servicio web
+			
 			int exito = 0;
 			
 			//
@@ -114,7 +117,7 @@ public class Conexion {
 				//
 				if (exito==0){
 					//TODO TODAS las excepciones !!!
-					//throw new ExcepcionAplicacion("El servicio web no ha respondido con ï¿½xito",ExcepcionAplicacion.EXCEPCION_DATOS_ERRONEOS);
+					//throw new ExcepcionAplicacion("El servicio web no ha respondido con exito",ExcepcionAplicacion.EXCEPCION_DATOS_ERRONEOS);
 				}				
 			}	
 				
