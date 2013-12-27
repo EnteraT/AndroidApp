@@ -19,7 +19,7 @@
        <item name="android:background">@drawable/shape_button_publicar</item>
        <item name="android:textSize">@dimen/bini15</item>
       <!-- <item name="android:alpha">0.5</item> tenemos problemas con el numero de API -->
-       <item name="android:gravity">center vertical</item>
+       <item name="android:gravity">center_vertical</item>
        <item name="android:layout_width">120dp</item>
        <item name="android:layout_height">70dp</item>
        <item name="android:typeface">sans</item>
