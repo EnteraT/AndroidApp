@@ -41,6 +41,7 @@
             style="@style/st_main_button"
             android:alpha="0.75"
             android:onClick="verExamen"
+            android:drawableTop="@android:drawable/ic_menu_edit"
             android:text="@string/b_examenes_p" />
 
         <Button
@@ -50,6 +51,7 @@
             android:layout_centerHorizontal="true"
             android:alpha="0.75"
             android:onClick="verAsignatura_p"
+            android:drawableTop="@android:drawable/ic_menu_myplaces"
             android:text="@string/b_asignaturas_p" />
 
         <Button
@@ -59,6 +61,7 @@
             android:layout_alignParentTop="true"
             android:alpha="0.75"
             android:onClick="verTarea"
+            android:drawableTop="@android:drawable/stat_notify_chat"
             android:text="@string/b_tareas_p" />
 
         <Button
@@ -68,6 +71,7 @@
             android:layout_centerVertical="true"
             android:alpha="0.75"
             android:onClick="verIncidencia"
+            android:drawableTop="@android:drawable/stat_notify_error"
             android:text="@string/b_incidencias_p" />
 
         <Button
@@ -78,6 +82,7 @@
             android:layout_alignParentRight="true"
             android:alpha="0.75"
             android:onClick="verAnuncio"
+            android:drawableTop="@android:drawable/ic_popup_reminder"
             android:text="@string/b_anuncios_p" />
 
     </RelativeLayout>
