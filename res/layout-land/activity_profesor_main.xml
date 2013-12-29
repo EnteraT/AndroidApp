@@ -1,0 +1,85 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ProfesorMainActivity" >
+
+        <Button
+            android:id="@+id/b_examen_t"
+            style="@style/st_main_button"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:alpha="0.75"
+            android:drawableTop="@android:drawable/ic_menu_edit"
+            android:onClick="publicarExamen"
+            android:text="@string/control_txt" />
+
+        <Button
+            
+            android:id="@+id/b_incidencia_t"
+            style="@style/st_main_button"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/b_examen_t"
+            android:alpha="0.75"
+            android:drawableTop="@android:drawable/stat_notify_error"
+            android:onClick="publicarIncidencia"
+            android:text="@string/faltasbutton" />
+
+        <Button
+            android:id="@+id/b_anuncios_t"
+            style="@style/st_main_button"
+            android:layout_above="@+id/b_incidencia_t"
+            android:layout_alignParentLeft="true"
+            android:alpha="0.75"
+            android:drawableTop="@android:drawable/ic_popup_reminder"
+            android:onClick="publicarAnuncio"
+            android:text="@string/anunciosbutton" />
+
+        <Button
+            android:id="@+id/b_tareas_t"
+            style="@style/st_main_button"
+            android:layout_alignBaseline="@+id/b_incidencia_t"
+            android:layout_alignBottom="@+id/b_incidencia_t"
+            android:layout_alignParentLeft="true"
+            android:alpha="0.75"
+            android:drawableTop="@android:drawable/stat_notify_chat"
+            android:onClick="publicarTarea"
+            android:text="@string/tareas_txt"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/profesorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/b_asignatura_t"
+            android:layout_marginTop="60dp"
+            android:text="@string/profesor_txt"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/nombre_t"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/profesorTextView"
+            android:layout_alignBottom="@+id/profesorTextView"
+            android:layout_toRightOf="@+id/profesorTextView"
+            android:hint="@string/default_name_t"/>
+
+        <Button
+            android:id="@+id/b_asignatura_t"
+            style="@style/st_main_button"
+            android:layout_alignBottom="@+id/b_incidencia_t"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="26dp"
+            android:alpha="0.75"
+            android:drawableTop="@android:drawable/ic_menu_myplaces"
+            android:onClick="verAsignatura"
+            android:text="@string/asignaturabutton" />
+
+</RelativeLayout>
