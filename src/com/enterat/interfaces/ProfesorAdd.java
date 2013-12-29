@@ -12,8 +12,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.enterat.R;
 
@@ -43,9 +45,16 @@ protected void onCreate(Bundle savedInstanceState) {
 //Boton publicar
 public void publicarClick(View v) {
 	
+	
+	//Este es el bucle para controlar que esta checkeado el checkbox
+	CheckBox check=(CheckBox) findViewById(R.id.check_all_class);
+	if(check.isChecked()){
+	Toast.makeText(getApplicationContext(),"Se ha publicado correctamente",Toast.LENGTH_LONG).show();	
+	}
+	else if(check.isChecked()==false){
 	Intent intent = new Intent(this, LookFor.class);
     startActivity(intent);
-	
+	}
 }
 
 

@@ -106,6 +106,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/all_class"
         android:layout_alignBottom="@+id/all_class"
-        android:layout_toRightOf="@+id/all_class" />
+        android:layout_toRightOf="@+id/all_class"
+        android:checked="true" />
 
  </RelativeLayout>

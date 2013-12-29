@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.enterat.R;
 
@@ -19,6 +20,7 @@ protected void onCreate(Bundle savedInstanceState) {
 //Boton publicar
 public void publicarClick2(View v) {
 	
+	Toast.makeText(getApplicationContext(),"Se ha publicado correctamente",Toast.LENGTH_LONG).show();
 	Intent intent = new Intent(this, ProfesorAdd.class);
     startActivity(intent);
 	
