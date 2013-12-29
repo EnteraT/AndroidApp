@@ -37,19 +37,19 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.enterat.interfaces.ProfesorTasksActivity"
+            android:name="com.enterat.interfaces.ProfesorAdd"
             android:label="@string/deures_txt" >
         </activity>
         <activity
-            android:name="com.enterat.interfaces.ProfesorExamsActivity"
+            android:name="com.enterat.interfaces.LookFor"
             android:label="@string/control_txt" >
         </activity>
         <activity
-            android:name="com.enterat.interfaces.PadresExamsActivity"
-            android:label="@string/control_txt" >
+            android:name="com.enterat.interfaces.Contenido"
+            android:label="@string/deures_txt" >
         </activity>
         <activity
-            android:name="com.enterat.interfaces.PadresTasksActivity"
+            android:name="com.enterat.interfaces.AsignaturaActivity"
             android:label="@string/deures_txt" >
         </activity>
         

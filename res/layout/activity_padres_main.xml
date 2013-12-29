@@ -32,47 +32,55 @@
         </ListView>
     </ScrollView>
 
-    <Button
-        android:id="@+id/b_asignaturas_p"
-        style="@style/st_main_button"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:alpha="0.75"
-        android:onClick="verAsignatura_p"
-        android:text="@string/b_asignaturas_p" />
+        android:layout_height="252dp" >
 
-    <Button
-        android:id="@+id/b_tareas_p"
-        style="@style/st_main_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:alpha="0.75"
-        android:onClick="verTarea"
-        android:text="@string/b_tareas_p" />
+        <Button
+            android:id="@+id/b_exam_p"
+            style="@style/st_main_button"
+            android:alpha="0.75"
+            android:onClick="verExamen"
+            android:text="@string/b_examenes_p" />
 
-    <Button
-        android:id="@+id/b_incidencias_p"
-        style="@style/st_main_button"
-        android:alpha="0.75"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/b_incidencias_p" />
-    <Button
-        android:id="@+id/b_anuncios_p"
-        style="@style/st_main_button"
-        android:alpha="0.75"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/b_anuncios_p" />
+        <Button
+            android:id="@+id/b_asignaturas_p"
+            style="@style/st_main_button"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:alpha="0.75"
+            android:onClick="verAsignatura_p"
+            android:text="@string/b_asignaturas_p" />
 
-    <Button
-        android:id="@+id/b_exam_p"
-        style="@style/st_main_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:alpha="0.75"
-        android:onClick="verExamen"
-        android:text="@string/b_examenes_p" />
+        <Button
+            android:id="@+id/b_tareas_p"
+            style="@style/st_main_button"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:alpha="0.75"
+            android:onClick="verTarea"
+            android:text="@string/b_tareas_p" />
+
+        <Button
+            android:id="@+id/b_incidencias_p"
+            style="@style/st_main_button"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:alpha="0.75"
+            android:onClick="verIncidencia"
+            android:text="@string/b_incidencias_p" />
+
+        <Button
+            android:id="@+id/b_anuncios_p"
+            style="@style/st_main_button"
+            android:layout_alignBaseline="@+id/b_incidencias_p"
+            android:layout_alignBottom="@+id/b_incidencias_p"
+            android:layout_alignParentRight="true"
+            android:alpha="0.75"
+            android:onClick="verAnuncio"
+            android:text="@string/b_anuncios_p" />
+
+    </RelativeLayout>
 	
 	</LinearLayout>
 	</ScrollView>

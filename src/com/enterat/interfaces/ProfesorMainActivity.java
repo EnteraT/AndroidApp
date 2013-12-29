@@ -5,7 +5,10 @@ import com.enterat.R;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -44,24 +47,28 @@ public class ProfesorMainActivity extends Activity {
 		return true;
 	}	
 	
-	public void tasksClick(View v) {
-		startActivity(new Intent(this, ProfesorTasksActivity.class));
+	public void publicarAnuncio(View v) {
+		guardar(this,"Anuncio");
+		startActivity(new Intent(this, ProfesorAdd.class));
 	}
 	
-	public void examClick(View v) {
-		startActivity(new Intent(this, ProfesorExamsActivity.class));
+	public void publicarExamen(View v) {
+		guardar(this,"Examen");
+		startActivity(new Intent(this, ProfesorAdd.class));
 	}	
 	
-	public void anunciosClick(View v) {
-		//
+	public void publicarIncidencia(View v) {
+		guardar(this,"Incidencia");
+		startActivity(new Intent(this, ProfesorAdd.class));
 	}
 	
-	public void faltasClick(View v) {
-		//
+	public void publicarTarea(View v) {
+		guardar(this,"Tarea");
+		startActivity(new Intent(this, ProfesorAdd.class));
 	}
 	
-	public void notesClick(View v) {
-		//
+	public void verAsignatura(View v) {
+		startActivity(new Intent(this, AsignaturaActivity.class));
 	}
 	
 	public void notificationClick(View v) {
@@ -81,4 +88,11 @@ public class ProfesorMainActivity extends Activity {
 		i.setData(Uri.parse(url));
 		startActivity(i);
 	}
+	public void guardar(Context c,String s) {
+        SharedPreferences preferencias=getSharedPreferences("datos",c.MODE_PRIVATE);
+        Editor editor=preferencias.edit();
+        editor.putString("type", s);
+        editor.commit();
+        finish();
+    }
 }

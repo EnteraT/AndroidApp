@@ -44,37 +44,29 @@ public class PadresMainActivity extends Activity {
 		return true;
 	}	
 	
-	public void infoClick(View v) {
-		//
-	}	
 	
-	public void asignaturasClick(View v) {
-		//
-	}	
 	
-	public void tasksClick(View v) {
-		startActivity(new Intent(this, PadresTasksActivity.class));
+	public void verAnuncio(View v) {
+		startActivity(new Intent(this, AsignaturaActivity.class));
+	}
+
+	public void verExamen(View v) {
+		startActivity(new Intent(this, AsignaturaActivity.class));
+	}
+
+	public void verTarea(View v) {
+		startActivity(new Intent(this, AsignaturaActivity.class));
+	}
+
+	public void verIncidencia(View v) {
+		startActivity(new Intent(this, AsignaturaActivity.class));
+	}
+
+	public void verAsignatura_p(View v) {
+		startActivity(new Intent(this, AsignaturaActivity.class));
 	}
 	
-	public void examClick(View v) {
-		startActivity(new Intent(this, PadresExamsActivity.class));
-	}	
 	
-	public void notesClick(View v) {
-		//
-	}
-	
-	public void calendarioClick(View v) {
-		//
-	}	
-	
-	public void faltasClick(View v) {
-		//
-	}	
-	
-	public void notificationClick(View v) {
-		//
-	}
 	
 	public void webClick(View v) {
 		String url = "http://www.escolaeldrac.com";
