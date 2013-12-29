@@ -55,16 +55,10 @@
     
     <string name="assignatura_txt">Asignatura</string>
     <string-array name="assignatura_array">
-        <item>Matemáticas</item>
-        <item>Naturales</item>
-        <item>Valenciano</item>
-        <item>Castellno</item>
-        <item>Inglés</item>
-        <item>Sociales</item>
-        <item>Música</item>
-        <item>Ed. Física</item>
-        <item>Informática</item>
-        <item>Francés</item>
+        <item>Anuncio</item>
+        <item>Exámen</item>
+        <item>Tarea</item>
+        <item>Incidencia</item>
     </string-array>
 
     <string name="curs_txt">Curso / Grupo</string>
