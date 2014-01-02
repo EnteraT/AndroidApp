@@ -60,7 +60,7 @@ protected void onCreate(Bundle savedInstanceState) {
 			check.setChecked(false);
 		}
 		
-		//Recuperamos fecha del date-picker
+		// Recuperamos fecha del date-picker
 		Integer year=prefe.getInt("año",0);
 		Integer month=prefe.getInt("mes",0);
 		Integer day=prefe.getInt("dia",0);
@@ -71,6 +71,11 @@ protected void onCreate(Bundle savedInstanceState) {
 		else{
 			date.updateDate(year,month,day);
 		}
+		
+		// Recuperamos la posición del espinner
+		Integer posicion=prefe.getInt("posicionsp",0);
+		Spinner sp2 = (Spinner) findViewById(R.id.asignatura_Spinner_t);
+		sp2.setSelection(posicion);
 		
 }
 
@@ -119,6 +124,11 @@ protected void onPause() {
 	editar.putInt("año", year);
 	editar.putInt("mes", month);
 	editar.putInt("dia", day);
+	
+	// guardamos la posición de los spinner
+	Spinner sp=(Spinner) findViewById(R.id.asignatura_Spinner_t);
+	Integer posicion=sp.getPositionForView(sp);
+	editar.putInt("posicionsp",posicion);
 	
 	editar.commit( );
 	
