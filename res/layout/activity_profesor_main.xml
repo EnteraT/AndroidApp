@@ -17,7 +17,7 @@
             android:alpha="0.75"
             android:drawableTop="@android:drawable/ic_menu_edit"
             android:onClick="publicarExamen"
-            android:text="@string/control_txt" />
+            android:text="@string/txt_examenes" />
 
         <Button
             
@@ -28,7 +28,7 @@
             android:alpha="0.75"
             android:drawableTop="@android:drawable/stat_notify_error"
             android:onClick="publicarIncidencia"
-            android:text="@string/faltasbutton" />
+            android:text="@string/bt_faltas" />
 
         <Button
             android:id="@+id/b_anuncios_t"
@@ -38,7 +38,7 @@
             android:alpha="0.75"
             android:drawableTop="@android:drawable/ic_popup_reminder"
             android:onClick="publicarAnuncio"
-            android:text="@string/anunciosbutton" />
+            android:text="@string/bt_anuncios" />
 
         <Button
             android:id="@+id/b_tareas_t"
@@ -49,7 +49,7 @@
             android:alpha="0.75"
             android:drawableTop="@android:drawable/stat_notify_chat"
             android:onClick="publicarTarea"
-            android:text="@string/tareas_txt"
+            android:text="@string/bt_tareas"
             android:textStyle="normal" />
 
         <Button
@@ -61,7 +61,7 @@
             android:alpha="0.75"
             android:drawableTop="@android:drawable/ic_menu_myplaces"
             android:onClick="verAsignatura"
-            android:text="@string/asignaturabutton" />
+            android:text="@string/bt_asignaturas" />
 
         <TextView
             android:id="@+id/profesorTextView"
@@ -70,7 +70,7 @@
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/b_asignatura_t"
             android:layout_marginTop="60dp"
-            android:text="@string/profesor_txt"
+            android:text="@string/txt_profesor"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
@@ -80,7 +80,7 @@
             android:layout_alignBaseline="@+id/profesorTextView"
             android:layout_alignBottom="@+id/profesorTextView"
             android:layout_toRightOf="@+id/profesorTextView"
-            android:hint="@string/default_name_t"/>
+            android:hint="@string/txt_nombre_profesor"/>
 
    
 

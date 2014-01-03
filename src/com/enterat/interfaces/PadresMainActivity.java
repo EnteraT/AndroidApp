@@ -66,8 +66,6 @@ public class PadresMainActivity extends Activity {
 		startActivity(new Intent(this, AsignaturaActivity.class));
 	}
 	
-	
-	
 	public void webClick(View v) {
 		String url = "http://www.escolaeldrac.com";
 		Intent i = new Intent(Intent.ACTION_VIEW);

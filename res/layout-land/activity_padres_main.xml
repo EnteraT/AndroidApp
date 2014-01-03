@@ -41,9 +41,9 @@
             android:alpha="0.75"
             android:drawableTop="@android:drawable/stat_notify_chat"
             android:onClick="verTarea"
-            android:text="@string/b_tareas_p" />
+            android:text="@string/bt_tareas" />
 
-        <Button
+        <Buttons
             android:id="@+id/b_anuncios_p"
             style="@style/st_main_button"
             android:layout_alignBaseline="@+id/b_incidencias_p"
@@ -52,7 +52,7 @@
             android:alpha="0.75"
             android:drawableTop="@android:drawable/ic_popup_reminder"
             android:onClick="verAnuncio"
-            android:text="@string/b_anuncios_p" />
+            android:text="@string/bt_anuncios" />
 
         <Button
             android:id="@+id/b_asignaturas_p"
@@ -63,7 +63,7 @@
             android:alpha="0.75"
             android:drawableTop="@android:drawable/ic_menu_myplaces"
             android:onClick="verAsignatura_p"
-            android:text="@string/b_asignaturas_p" />
+            android:text="@string/bt_asignaturas" />
 
         <Button
             android:id="@+id/b_incidencias_p"
@@ -74,7 +74,7 @@
             android:alpha="0.75"
             android:drawableTop="@android:drawable/stat_notify_error"
             android:onClick="verIncidencia"
-            android:text="@string/b_incidencias_p" />
+            android:text="@string/bt_incidencias" />
 
         <Button
             android:id="@+id/b_exam_p"
@@ -84,7 +84,7 @@
             android:alpha="0.75"
             android:drawableTop="@android:drawable/ic_menu_edit"
             android:onClick="verExamen"
-            android:text="@string/b_examenes_p" />
+            android:text="@string/bt_examenes" />
 
     </RelativeLayout>
 

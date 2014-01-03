@@ -9,8 +9,12 @@ package com.enterat;
 
 public final class R {
     public static final class array {
-        public static final int assignatura_array=0x7f060000;
-        public static final int curs_array=0x7f060001;
+        /** Arrays
+         */
+        public static final int array_asignaturas=0x7f060000;
+        public static final int array_cursos=0x7f060001;
+        public static final int assignatura_array=0x7f060002;
+        public static final int curs_array=0x7f060003;
     }
     public static final class attr {
     }
@@ -35,53 +39,55 @@ public final class R {
         public static final int shape_spinner=0x7f020006;
     }
     public static final class id {
-        public static final int DatePicker_t=0x7f09001c;
-        public static final int SignInbutton=0x7f09000b;
-        public static final int Tipo_Spinner_t=0x7f090018;
-        public static final int Type_TextView=0x7f090017;
-        public static final int all_class=0x7f09001f;
-        public static final int asignatura_Spinner_t=0x7f09001a;
-        public static final int asignatura_TextView=0x7f090019;
+        public static final int DatePicker_t=0x7f09001e;
+        public static final int Tipo_Spinner_t=0x7f09001a;
+        public static final int Type_TextView=0x7f090019;
+        public static final int all_class=0x7f090021;
+        public static final int asignatura_Spinner_t=0x7f09001c;
+        public static final int asignatura_TextView=0x7f09001b;
         public static final int asignaturas_spinner=0x7f090001;
-        public static final int b_anuncios_p=0x7f090016;
-        public static final int b_anuncios_t=0x7f090024;
-        public static final int b_asignatura_t=0x7f090026;
-        public static final int b_asignaturas_p=0x7f090013;
-        public static final int b_exam_p=0x7f090012;
-        public static final int b_examen_t=0x7f090022;
-        public static final int b_incidencia_t=0x7f090023;
-        public static final int b_incidencias_p=0x7f090015;
-        public static final int b_tareas_p=0x7f090014;
-        public static final int b_tareas_t=0x7f090025;
-        public static final int cerrar_sesion_t=0x7f09002e;
-        public static final int check_all_class=0x7f090021;
-        public static final int contenido_t=0x7f09001e;
-        public static final int dataTextView=0x7f09001b;
-        public static final int deuresTextView=0x7f09001d;
-        public static final int hijo_spinner_P=0x7f09000f;
-        public static final int ivListViewItem=0x7f090029;
-        public static final int listView1=0x7f09000c;
-        public static final int list_incidencias_p=0x7f090011;
-        public static final int menu_settings=0x7f09002d;
-        public static final int nombre_t=0x7f090028;
-        public static final int passEditText=0x7f09000a;
-        public static final int passwordTextView=0x7f090009;
-        public static final int profesorTextView=0x7f090027;
-        public static final int publicarButton=0x7f090020;
-        public static final int publicarButton2=0x7f09000d;
+        public static final int b_anuncios_p=0x7f090018;
+        public static final int b_anuncios_t=0x7f090026;
+        public static final int b_asignatura_t=0x7f090028;
+        public static final int b_asignaturas_p=0x7f090015;
+        public static final int b_exam_p=0x7f090014;
+        public static final int b_examen_t=0x7f090024;
+        public static final int b_incidencia_t=0x7f090025;
+        public static final int b_incidencias_p=0x7f090017;
+        public static final int b_login=0x7f09000d;
+        public static final int b_logout=0x7f09000c;
+        public static final int b_tareas_p=0x7f090016;
+        public static final int b_tareas_t=0x7f090027;
+        public static final int cerrar_sesion_t=0x7f090030;
+        public static final int check_all_class=0x7f090023;
+        public static final int contenido_t=0x7f090020;
+        public static final int dataTextView=0x7f09001d;
+        public static final int deuresTextView=0x7f09001f;
+        public static final int hijo_spinner_P=0x7f090011;
+        public static final int ivListViewItem=0x7f09002b;
+        public static final int linearLayout1=0x7f090007;
+        public static final int listView1=0x7f09000e;
+        public static final int list_incidencias_p=0x7f090013;
+        public static final int menu_settings=0x7f09002f;
+        public static final int nombre_t=0x7f09002a;
+        public static final int passEditText=0x7f09000b;
+        public static final int passwordTextView=0x7f09000a;
+        public static final int profesorTextView=0x7f090029;
+        public static final int publicarButton=0x7f090022;
+        public static final int publicarButton2=0x7f09000f;
         public static final int scrollView1=0x7f090000;
-        public static final int scroll_incidencias_p=0x7f090010;
-        public static final int scroll_main_p=0x7f09000e;
+        public static final int scroll_incidencias_p=0x7f090012;
+        public static final int scroll_main_p=0x7f090010;
         public static final int tab_asignaturas_anuncios=0x7f090004;
         public static final int tab_asignaturas_examenes=0x7f090005;
         public static final int tab_asignaturas_incidencias=0x7f090003;
         public static final int tab_asignaturas_tareas=0x7f090002;
         public static final int textView1=0x7f090006;
-        public static final int tvDateListViewItem=0x7f09002b;
-        public static final int tvDescriptionListViewItem=0x7f09002c;
-        public static final int tvTitleListViewItem=0x7f09002a;
-        public static final int userEditText=0x7f090008;
-        public static final int userTextView=0x7f090007;
+        public static final int tvDateListViewItem=0x7f09002d;
+        public static final int tvDescriptionListViewItem=0x7f09002e;
+        public static final int tvTitleListViewItem=0x7f09002c;
+        public static final int userEditText=0x7f090009;
+        public static final int userTextView=0x7f090008;
     }
     public static final class layout {
         public static final int activity_asignaturas=0x7f030000;
@@ -99,57 +105,82 @@ public final class R {
         public static final int menu_main_teacher=0x7f080001;
     }
     public static final class string {
-        public static final int action_settings=0x7f050029;
-        /**  Text View 
-         */
-        public static final int all_class=0x7f05001b;
-        public static final int alumno_txt=0x7f050007;
-        public static final int anunciosbutton=0x7f05000d;
-        public static final int app_name=0x7f050000;
-        public static final int asignatura_txt=0x7f05001d;
-        public static final int asignaturabutton=0x7f050013;
-        public static final int asignaturasButton=0x7f050011;
-        public static final int assignatura_txt=0x7f050023;
-        public static final int b_anuncios_p=0x7f050019;
-        public static final int b_asignaturas_p=0x7f050016;
-        public static final int b_examenes_p=0x7f05001a;
-        public static final int b_incidencias_p=0x7f050018;
-        public static final int b_tareas_p=0x7f050017;
-        public static final int calendariobutton=0x7f05000f;
-        public static final int circularsButton=0x7f05000b;
-        public static final int contingut_txt=0x7f050012;
-        public static final int control_txt=0x7f05000a;
-        public static final int curs_txt=0x7f050024;
-        public static final int data_control_txt=0x7f05001f;
-        public static final int data_entrega_txt=0x7f05001e;
-        public static final int data_txt=0x7f050020;
-        public static final int default_name_t=0x7f050014;
-        public static final int deures_txt=0x7f05002b;
-        public static final int eldrac_txt=0x7f05002a;
+        public static final int action_settings=0x7f05002d;
+        public static final int app_name=0x7f05002c;
+        public static final int asignaturasButton=0x7f050035;
+        public static final int assignatura_txt=0x7f050038;
+        public static final int bt_anuncios=0x7f05000c;
+        public static final int bt_asignatura=0x7f050007;
+        public static final int bt_asignaturas=0x7f050008;
+        public static final int bt_calendario=0x7f050005;
         /**  Botones
          */
-        public static final int facebook_txt=0x7f050008;
-        public static final int faltasbutton=0x7f05000e;
-        public static final int informaciobutton=0x7f050010;
-        public static final int login_no_ok_txt=0x7f050028;
-        public static final int login_ok_txt=0x7f050027;
-        public static final int menu_cerrar_sesion=0x7f050022;
+        public static final int bt_circular=0x7f050002;
+        public static final int bt_continuar=0x7f050010;
+        public static final int bt_examenes=0x7f05000d;
+        public static final int bt_faltas=0x7f050004;
+        public static final int bt_incidencias=0x7f05000b;
+        public static final int bt_info=0x7f050006;
+        public static final int bt_login=0x7f05000e;
+        public static final int bt_logout=0x7f05000f;
+        public static final int bt_notas=0x7f050003;
+        public static final int bt_tarea=0x7f050009;
+        public static final int bt_tareas=0x7f05000a;
+        public static final int circularsButton=0x7f050032;
+        public static final int contingut_txt=0x7f050037;
+        public static final int control_txt=0x7f050031;
+        public static final int curs_txt=0x7f050039;
+        public static final int data_control_txt=0x7f05003b;
+        public static final int data_entrega_txt=0x7f05003a;
+        public static final int deures_txt=0x7f050030;
+        public static final int eldrac_txt=0x7f05002e;
+        public static final int facebook_txt=0x7f05002f;
+        public static final int informaciobutton=0x7f050034;
+        public static final int login_no_ok_txt=0x7f050041;
+        public static final int login_ok_txt=0x7f050040;
+        public static final int menu_cerrar_sesion=0x7f050025;
         /**  Menus 
          */
-        public static final int menu_settings=0x7f050021;
-        public static final int no_internet_connection=0x7f050005;
-        public static final int notesbutton=0x7f05000c;
-        public static final int pass_txt=0x7f050003;
-        public static final int profesor_txt=0x7f050006;
-        public static final int publicar_control_ok_txt=0x7f050026;
-        public static final int publicar_deure_ok_txt=0x7f050025;
-        public static final int publicar_txt=0x7f050015;
-        public static final int row=0x7f050001;
-        public static final int sigin_txt=0x7f050004;
-        public static final int tareas_txt=0x7f050009;
-        public static final int title_activity_inicio=0x7f05002c;
-        public static final int type_txt=0x7f05001c;
-        public static final int user_txt=0x7f050002;
+        public static final int menu_configuracion=0x7f050024;
+        public static final int menu_settings=0x7f050036;
+        public static final int msg_login_no_ok=0x7f050029;
+        public static final int msg_login_ok=0x7f050028;
+        public static final int msg_publicar_examen_ok=0x7f050027;
+        /** Mensajes
+         */
+        public static final int msg_publicar_tarea_ok=0x7f050026;
+        public static final int msg_sin_conexion=0x7f05002a;
+        public static final int notesbutton=0x7f050033;
+        public static final int publicar_control_ok_txt=0x7f05003e;
+        public static final int publicar_deure_ok_txt=0x7f05003d;
+        public static final int publicar_txt=0x7f05003c;
+        public static final int row=0x7f05002b;
+        public static final int title_activity_inicio=0x7f05003f;
+        public static final int txt_alumno=0x7f050019;
+        /** Comunes
+         */
+        public static final int txt_app_name=0x7f050000;
+        public static final int txt_asignaturas=0x7f05001d;
+        /**  Text View 
+         */
+        public static final int txt_clase_completa=0x7f050011;
+        public static final int txt_contenido=0x7f05001e;
+        public static final int txt_curso=0x7f05001a;
+        public static final int txt_examenes=0x7f05001c;
+        public static final int txt_facebook=0x7f050001;
+        public static final int txt_fecha=0x7f050016;
+        public static final int txt_fecha_entrega=0x7f050014;
+        public static final int txt_fecha_examen=0x7f050015;
+        public static final int txt_fila=0x7f050023;
+        public static final int txt_login=0x7f050022;
+        public static final int txt_nombre_profesor=0x7f050017;
+        public static final int txt_pass=0x7f050021;
+        public static final int txt_pregunta_asignatura=0x7f050013;
+        public static final int txt_pregunta_tarea=0x7f050012;
+        public static final int txt_profesor=0x7f050018;
+        public static final int txt_publicar=0x7f05001f;
+        public static final int txt_tarea=0x7f05001b;
+        public static final int txt_user=0x7f050020;
     }
     public static final class style {
         /** 

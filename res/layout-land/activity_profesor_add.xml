@@ -26,7 +26,7 @@
                 android:id="@+id/Type_TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/type_txt"
+                android:text="@string/txt_pregunta_tarea"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <Spinner
@@ -35,13 +35,13 @@
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:alpha="0.75"
-                android:entries="@array/assignatura_array" />
+                android:entries="@array/array_asignaturas" />
 
             <TextView
                 android:id="@+id/asignatura_TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/asignatura_txt"
+                android:text="@string/txt_asignaturas"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <Spinner
@@ -50,7 +50,7 @@
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:alpha="0.75"
-                android:entries="@array/curs_array" />
+                android:entries="@array/array_cursos" />
         </LinearLayout>
     </ScrollView>
 
@@ -65,7 +65,7 @@
             android:id="@+id/deuresTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/contingut_txt"
+            android:text="@string/txt_contenido"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText
@@ -80,7 +80,7 @@
             android:id="@+id/all_class"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/all_class" />
+            android:text="@string/txt_clase_completa" />
 
         <CheckBox
             android:id="@+id/check_all_class"
@@ -92,7 +92,7 @@
             android:id="@+id/dataTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/data_txt"
+            android:text="@string/txt_fecha"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <DatePicker
@@ -108,7 +108,7 @@
             android:layout_marginBottom="32dp"
             android:alpha="0.75"
             android:onClick="publicarClick"
-            android:text="@string/publicar_txt" />
+            android:text="@string/txt_publicar" />
 
     </LinearLayout>
 

@@ -23,7 +23,7 @@
         android:alpha="0.75"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/publicar_txt"
+        android:text="@string/txt_publicar"
         android:layout_gravity="center" 
         android:onClick="publicarClick2"/>
 
