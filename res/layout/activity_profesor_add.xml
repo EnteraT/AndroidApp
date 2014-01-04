@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:alpha="0.75"
-        android:entries="@array/array_asignaturas" />
+        android:entries="@array/array_insertar" />
 
     <TextView
         android:id="@+id/asignatura_TextView"

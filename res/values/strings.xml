@@ -62,24 +62,21 @@
      
     <!--Arrays-->
     
-    <string-array name="array_asignaturas">
-        <item>Matemáticas</item>
-        <item>Naturales</item>
-        <item>Valenciano</item>
-        <item>Castellno</item>
-        <item>Inglés</item>
-        <item>Sociales</item>
-        <item>Música</item>
-        <item>Ed. Física</item>
-        <item>Informática</item>
-        <item>Francés</item>
+    <string-array name="array_insertar">
+        <item>Anuncio</item>
+        <item>Tarea</item>
+        <item>Incidencia</item>
+        <item>Examen</item>        
     </string-array>
-
+    
     <string-array name="array_cursos">
-        <item>1ero ESO</item>
-        <item>2ndo ESO</item>
-        <item>3ero ESO</item>
-        <item>4rto ESO</item>
+        <item>Matemáticas 2ndo ESO</item>
+        <item>Matemáticas 3ero ESO</item>
+        <item>Tecnologia 2ndo ESO</item>
+        <item>Informática 1ero ESO</item>
+        <item>Informática 2ndo ESO</item>
+        <item>Informática 3ero ESO</item>
+        <item>Informática 4rto ESO</item>        
     </string-array>
 
 

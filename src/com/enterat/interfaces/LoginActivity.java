@@ -75,7 +75,7 @@ public class LoginActivity extends Activity {
 				startActivity(intent);
 
 			// Se destruye esta actividad
-			//finish();
+			finish();
 		}
 	}
 
