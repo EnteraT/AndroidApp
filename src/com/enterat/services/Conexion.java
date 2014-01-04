@@ -52,37 +52,42 @@ public class Conexion extends Activity {
 		return ((info != null) && info.isConnected());
 	}
 
-	// Metodo generico para obtener JSON para cualquier servicio
-	public static JSONObject obtenerJsonDelServicio(List<NameValuePair> pairs,
-			String servicio) throws ClientProtocolException, IOException,
-			JSONException {
-
-		HttpClient client = new DefaultHttpClient();
-		JSONObject json = null;
-
-		HttpPost request = new HttpPost(url + servicio);
-		request.setHeader("Accept", "application/json");
+	//Metodo generico para obtener JSON para cualquier servicio
+	public static JSONObject obtenerJsonDelServicio(List<NameValuePair> pairs, String servicio) throws ClientProtocolException, IOException, JSONException {
+		
+		HttpClient client = new DefaultHttpClient();		
+		JSONObject json   = null;		
+				
+		HttpPost request = new HttpPost(url + servicio);		
+		request.setHeader("Accept","application/json");	
 		request.setEntity(new UrlEncodedFormEntity(pairs));
-
+		
 		HttpResponse response = client.execute(request);
-		HttpEntity entity = response.getEntity();
+		HttpEntity entity 	  = response.getEntity(); 
 		String responseString = null;
-
-		if (entity != null) {
-			InputStream stream = entity.getContent();
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					stream));
+		
+		if (entity != null) { 
+			InputStream stream = entity.getContent(); 
+			BufferedReader reader = new BufferedReader(	new InputStreamReader(stream) ); 
 			StringBuilder sb = new StringBuilder();
 			String line = null;
-			while ((line = reader.readLine()) != null) {
-				sb.append(line + "\n");
-			}
-			stream.close();
-			responseString = sb.toString();
-			json = new JSONObject(responseString);
-		}
+			while ((line = reader.readLine()) != null) { 
+				//sb.append(line + "\n");
+				sb.append(line);
+			}		 
+			stream.close(); 
+			responseString = sb.toString();	
 
-		return json;
+			//			
+			if(responseString.startsWith("[") && responseString.endsWith("]")){
+				responseString = responseString.substring(1, responseString.length()-1);
+			}
+			
+			//
+			json = new JSONObject(responseString);			
+		}	
+		
+		return json;	
 	}
 
 	public static int desconectarse() {

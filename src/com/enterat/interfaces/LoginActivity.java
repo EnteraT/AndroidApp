@@ -281,7 +281,7 @@ public class LoginActivity extends Activity {
 					startActivity(intent);
 
 				// Se destruye esta actividad
-				//finish();
+				finish();
 			} else {
 				msg = getResources().getString(R.string.msg_login_no_ok);
 			}
