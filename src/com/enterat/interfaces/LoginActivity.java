@@ -17,18 +17,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends Activity {
-	// Variable temporal para bypasear el LOGIN
-	boolean ByPass;
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 
 		// comentario nuevo
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
-
-		// Bypasear el LOGIN, hasta que funcione
-		ByPass = true;
 
 		//Restaura el formulario
 		if(Conexion.isLoggedIn()){
@@ -298,42 +293,9 @@ public class LoginActivity extends Activity {
 		}
 
 		@Override
-		protected Usuario doInBackground(Void... arg0) {
-
-			if (ByPass == false) {
-				// Realizar identificaci�n con el servidor
-				return Conexion.identificarse(user, pass);
-
-			} else {
-
-				Usuario FakeUser = new Usuario();
-				TextView textUser = (TextView) findViewById(R.id.userEditText);
-				TextView textPass = (TextView) findViewById(R.id.passEditText);
-
-				final String user = textUser.getText().toString();
-				final String pass = textPass.getText().toString();
-
-				//
-				FakeUser.setIdUsuario(0);
-				
-				if (user.equals("profesor")){
-					FakeUser.setIdUsuario(1111);
-					FakeUser.setTipo(Conexion.PROFESOR);
-					FakeUser.setUser("FakeProfesor");
-					FakeUser.setPassword("fakeprofesor");
-					Conexion.setLoggedIn(true);
-				}
-
-				if (user.equals("padre")) {
-					FakeUser.setIdUsuario(9999);
-					FakeUser.setTipo(Conexion.PADRE);
-					FakeUser.setUser("FakePadre");
-					FakeUser.setPassword("fakepadre");
-					Conexion.setLoggedIn(true);
-				}
-
-				return FakeUser;
-			}
+		protected Usuario doInBackground(Void... arg0) {			
+			//Realizar identificacion con el servidor
+			return Usuario.identificarse(user, pass);
 		}
 
 		// Atributos necesarios para conectar con el servidor

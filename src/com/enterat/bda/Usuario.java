@@ -1,6 +1,17 @@
 package com.enterat.bda;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.enterat.services.Conexion;
 
 public class Usuario {
 
@@ -41,7 +52,7 @@ public class Usuario {
 		this.fecha = fecha;
 	}
 
-	//Función para identificarse al abrir la aplicación
+	//Funcion para identificarse al abrir la aplicacion
 	public static Usuario identificarse(String usuario, String clave)
 	{
 		String sql1 = "SELECT id_usuario, tipo FROM USUARIO ";
