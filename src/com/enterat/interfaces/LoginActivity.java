@@ -259,40 +259,46 @@ public class LoginActivity extends Activity {
 
 		@Override
 		protected void onPostExecute(Usuario usuario) {
-
-			String msg;
-			
-			if (usuario.getIdUsuario() != 0) {
-
-				guardarPreferenciasLogIn(usuario);
-
-				msg = getResources().getString(R.string.msg_login_ok);
-
-				Intent intent = null;
-
-				switch (usuario.getTipo()) {
-				case Constantes.PROFESOR:
-					intent = new Intent(context, ProfesorMainActivity.class);
-					break;
-				case Constantes.PADRE:
-					intent = new Intent(context, PadresMainActivity.class);
-					break;
-				}
-				if (intent != null)
-					startActivity(intent);
-
-				// Se destruye esta actividad
-				finish();
-			} else {
-				msg = getResources().getString(R.string.msg_login_no_ok);
-			}
-
-			Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
-
-			//
 			super.onPostExecute(usuario);
+						
+			String mensaje;
+			
+			//Si existe el usuario
+			if(usuario != null){
+				
+				//Guardar datos en Preferences
+				guardarPreferenciasLogIn( usuario );
+				
+				//Crear mensaje login OK
+				mensaje = getResources().getString(R.string.msg_login_ok);
+								
+				//Dependiendo del tipo de usario...
+				if(usuario.getTipo() == Constantes.PROFESOR){
+					//...mostrar menú de Profesor...
+					Intent intent = new Intent(context, ProfesorMainActivity.class);
+			        startActivity(intent);
+				}
+				else{
+					if(usuario.getTipo() == Constantes.PADRE){
+						//...o mostrar menú de Padre
+						Intent intent = new Intent(context, PadresMainActivity.class);
+				        startActivity(intent);
+					}
+				}
+				
+				//Se destruye esta actividad
+				finish();
+			}
+			else			
+			{
+				//Si no existe el usuario... crear mensaje de error
+				mensaje = getResources().getString(R.string.msg_login_no_ok);
+			}
+			
+			//Mostrar mensaje
+			Toast.makeText(context, mensaje, Toast.LENGTH_LONG).show();
 		}
-
+		
 		@Override
 		protected Usuario doInBackground(Void... arg0) {			
 			//Realizar identificacion con el servidor
