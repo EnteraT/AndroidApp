@@ -3,6 +3,7 @@ package com.enterat.interfaces;
 import com.enterat.R;
 import com.enterat.bda.Usuario;
 import com.enterat.services.Conexion;
+import com.enterat.util.Constantes;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -64,10 +65,10 @@ public class LoginActivity extends Activity {
 			Intent intent = null;
 
 			switch (user.getTipo()) {
-			case Conexion.PROFESOR:
+			case Constantes.PROFESOR:
 				intent = new Intent(this, ProfesorMainActivity.class);
 				break;
-			case Conexion.PADRE:
+			case Constantes.PADRE:
 				intent = new Intent(this, PadresMainActivity.class);
 				break;
 			}
@@ -270,10 +271,10 @@ public class LoginActivity extends Activity {
 				Intent intent = null;
 
 				switch (usuario.getTipo()) {
-				case Conexion.PROFESOR:
+				case Constantes.PROFESOR:
 					intent = new Intent(context, ProfesorMainActivity.class);
 					break;
-				case Conexion.PADRE:
+				case Constantes.PADRE:
 					intent = new Intent(context, PadresMainActivity.class);
 					break;
 				}

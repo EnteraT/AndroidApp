@@ -18,6 +18,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.enterat.services.Conexion;
+import com.enterat.util.Constantes;
 
 public class Examen {
 
@@ -90,7 +91,7 @@ public class Examen {
 		//Obtener JSON
 		try {
 
-			json = Conexion.obtenerJsonDelServicio(pairs, "service.executeSQL.php");
+			json = Conexion.obtenerJsonDelServicio(pairs, "service.executeSQL.php", Constantes.SQL_INSERTAR);
 
 			if(json != null)
 			{

@@ -23,13 +23,9 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 import com.enterat.services.Conexion;
+import com.enterat.util.Constantes;
 
 public class Conexion extends Activity {
-
-	// Constantes para indicar el tipo de usuario de la aplicacion
-	public static final int PROFESOR = 1;
-	public static final int PADRE = 2;
-	public static final int ADMIN = 32769;
 	
 	public static boolean LoggedIn;
 
@@ -53,7 +49,7 @@ public class Conexion extends Activity {
 	}
 
 	//Metodo generico para obtener JSON para cualquier servicio
-	public static JSONObject obtenerJsonDelServicio(List<NameValuePair> pairs, String servicio) throws ClientProtocolException, IOException, JSONException {
+	public static JSONObject obtenerJsonDelServicio(List<NameValuePair> pairs, String servicio, int tipoConsulta) throws ClientProtocolException, IOException, JSONException {
 		
 		HttpClient client = new DefaultHttpClient();		
 		JSONObject json   = null;		
@@ -83,6 +79,10 @@ public class Conexion extends Activity {
 				responseString = responseString.substring(1, responseString.length()-1);
 			}
 			
+			if (tipoConsulta == Constantes.SQL_INSERTAR){
+				responseString = "{'isOk':'True'}";
+			}
+				
 			//
 			json = new JSONObject(responseString);			
 		}	

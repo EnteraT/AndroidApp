@@ -17,6 +17,7 @@ import com.enterat.bda.Alumno;
 import com.enterat.bda.Asignatura;
 import com.enterat.bda.Examen;
 import com.enterat.bda.Tarea;
+import com.enterat.util.Constantes;
 
 public class ProfesorAdd extends Activity{
 
@@ -30,13 +31,13 @@ public class ProfesorAdd extends Activity{
 		String a = pref.getString("type", " ");
 
 		if(a=="Anuncio")
-			sp.setSelection(1);
+			sp.setSelection(Constantes.SP_ANUNCIO);
 		else if(a=="Tarea")
-			sp.setSelection(2);
+			sp.setSelection(Constantes.SP_TAREA);
 		else if(a=="Incidencia")
-			sp.setSelection(0);
+			sp.setSelection(Constantes.SP_INCIDENCIA);
 		else if(a=="Examen")
-			sp.setSelection(3);
+			sp.setSelection(Constantes.SP_EXAMEN);
 		else
 			;
 		// Recuperamos datos al rotar pantalla o al volver a esta activity
@@ -119,13 +120,13 @@ public class ProfesorAdd extends Activity{
 			int tipo = sp.getSelectedItemPosition();				
 			
 			switch(tipo) {
-			case 0: 
+			case Constantes.SP_ANUNCIO: 
 				//Anuncio
 		        
 				Toast.makeText(getApplicationContext(),"Anuncio publicado correctamente", Toast.LENGTH_LONG).show();
 				
 				break;
-			case 1: 
+			case Constantes.SP_TAREA: 
 				//Tarea
 				Tarea tarea = new Tarea();				
 				
@@ -148,13 +149,13 @@ public class ProfesorAdd extends Activity{
 				}
 				
 				break;
-			case 2: 
+			case Constantes.SP_INCIDENCIA: 
 				//Incidencia
 				
 				Toast.makeText(getApplicationContext(),"Incidencia publicada correctamente", Toast.LENGTH_LONG).show();
 				
 				break;
-			case 3: 
+			case Constantes.SP_EXAMEN: 
 				//Examen
 			
 				Examen examen = new Examen();				
