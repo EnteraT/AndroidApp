@@ -68,7 +68,7 @@ public class Usuario {
 		
 		try {
 			//Obtener JSON
-			json = Conexion.obtenerJsonDelServicio(pairs, "service.executeSQL.php", Constantes.SQL_CONSULTAR);
+			json = Conexion.obtenerJsonDelServicio(pairs, "service.executeSQL.php", Constantes.SQL_CONSULTAR, Constantes.SERV_LOGIN);
 			
 			//Si se ha obtenido...
 			if(json != null)

@@ -100,7 +100,7 @@ public class Tarea {
 		//Obtener JSON
 		try {
 			
-			json = Conexion.obtenerJsonDelServicio(pairs, "service.executeSQL.php", Constantes.SQL_INSERTAR);
+			json = Conexion.obtenerJsonDelServicio(pairs, "service.executeSQL.php", Constantes.SQL_INSERTAR, Constantes.SERV_OTROS);
 			
 			if(json != null)
 			{

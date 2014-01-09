@@ -63,16 +63,27 @@ public class Imparte {
 
 		try {
 			//Obtener JSON con las asignaturas que imparte
-			json = Conexion.obtenerJsonDelServicio(pairs, "service.executeSQL.php", Constantes.SQL_CONSULTAR);
+			json = Conexion.obtenerJsonDelServicio(pairs, "service.executeSQL.php", Constantes.SQL_CONSULTAR, Constantes.SERV_IMPARTE);
 
 			//Si se ha obtenido...
 			if(json != null)
 			{
-				if (json.has("codigo"))
-				{
-					//Guardarlas las asignaturas
-					asignaturas = json.getString("codigo");						
-				}
+				boolean continuar = true;
+				int i = 0;
+				
+				while (continuar){
+				
+					String txt = "asignatura"+i;
+					if (json.has(txt))
+					{
+						//Guardarlas las asignaturas
+						asignaturas = asignaturas + json.getString(txt) + ",";						
+					}
+					else{
+						continuar = false;
+					}
+					i++;
+				}				
 			}
 
 		} catch (ClientProtocolException e) {

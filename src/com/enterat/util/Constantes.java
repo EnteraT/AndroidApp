@@ -19,5 +19,9 @@ public class Constantes {
 	public static final int SQL_MODIFICAR = 2;
 	public static final int SQL_ELIMINAR  = 3;
 	
+	//Constantes para indicar el servicio a ejecutar
+	public static final int SERV_OTROS    = 0;
+	public static final int SERV_LOGIN   = 1;
+	public static final int SERV_IMPARTE = 2;	
 		
 }

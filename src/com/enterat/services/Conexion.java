@@ -49,12 +49,12 @@ public class Conexion extends Activity {
 	}
 
 	//Metodo generico para obtener JSON para cualquier servicio
-	public static JSONObject obtenerJsonDelServicio(List<NameValuePair> pairs, String servicio, int tipoConsulta) throws ClientProtocolException, IOException, JSONException {
+	public static JSONObject obtenerJsonDelServicio(List<NameValuePair> pairs, String servicioWeb, int tipoConsulta, int servicio) throws ClientProtocolException, IOException, JSONException {
 		
 		HttpClient client = new DefaultHttpClient();		
 		JSONObject json   = null;		
 				
-		HttpPost request = new HttpPost(url + servicio);		
+		HttpPost request = new HttpPost(url + servicioWeb);		
 		request.setHeader("Accept","application/json");	
 		request.setEntity(new UrlEncodedFormEntity(pairs));
 		
@@ -67,8 +67,7 @@ public class Conexion extends Activity {
 			BufferedReader reader = new BufferedReader(	new InputStreamReader(stream) ); 
 			StringBuilder sb = new StringBuilder();
 			String line = null;
-			while ((line = reader.readLine()) != null) { 
-				//sb.append(line + "\n");
+			while ((line = reader.readLine()) != null) {
 				sb.append(line);
 			}		 
 			stream.close(); 
@@ -83,6 +82,22 @@ public class Conexion extends Activity {
 				responseString = "{'isOk':'True'}";
 			}
 				
+			//Modificar la cadena JSON devuelta por el servicio web, para crear correctamente el objeto JSON
+			if (servicio == Constantes.SERV_IMPARTE){
+				boolean continuar = true;
+				String responseString_Ant = ""; 
+				int i = 0;
+				while (continuar){
+					responseString_Ant = responseString;
+					responseString = responseString_Ant.replaceFirst("codigo","asignatura" + i);
+					continuar = (!responseString.equalsIgnoreCase(responseString_Ant));
+					i++;
+				}
+				responseString = responseString.replace("{","");
+				responseString = responseString.replace("}","");
+				responseString = "{" + responseString + "}";
+			}
+			
 			//
 			json = new JSONObject(responseString);			
 		}	

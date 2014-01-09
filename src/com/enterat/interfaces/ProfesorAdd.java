@@ -18,7 +18,6 @@ import com.enterat.bda.Alumno;
 import com.enterat.bda.Asignatura;
 import com.enterat.bda.Examen;
 import com.enterat.bda.Tarea;
-import com.enterat.bda.Usuario;
 import com.enterat.util.Constantes;
 
 public class ProfesorAdd extends Activity{
@@ -29,7 +28,7 @@ public class ProfesorAdd extends Activity{
 		setContentView(R.layout.activity_profesor_add);
 		Spinner sp = (Spinner) findViewById(R.id.Tipo_Spinner_t);
 
-		SharedPreferences pref = getSharedPreferences("datos", this.MODE_PRIVATE);
+		SharedPreferences pref = getSharedPreferences("datos", Context.MODE_PRIVATE);
 		String a = pref.getString("type", " ");
 
 		if(a=="Anuncio")
@@ -43,7 +42,7 @@ public class ProfesorAdd extends Activity{
 		else
 			;
 		// Recuperamos datos al rotar pantalla o al volver a esta activity
-		SharedPreferences prefe = getSharedPreferences("guardado_profadd",Context.MODE_PRIVATE);
+		SharedPreferences prefe = getSharedPreferences("guardado_profadd", Context.MODE_PRIVATE);
 
 		// Recuperamos lo escrito en el edit-text
 		String text_contenido = prefe.getString("contenido","");
