@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -17,6 +18,7 @@ import com.enterat.bda.Alumno;
 import com.enterat.bda.Asignatura;
 import com.enterat.bda.Examen;
 import com.enterat.bda.Tarea;
+import com.enterat.bda.Usuario;
 import com.enterat.util.Constantes;
 
 public class ProfesorAdd extends Activity{
@@ -70,11 +72,18 @@ public class ProfesorAdd extends Activity{
 			date.updateDate(year,month,day);
 		}
 
-		// Recuperamos la posición del espinner
-		Integer posicion=prefe.getInt("posicionsp",0);
+		//		
 		Spinner sp2 = (Spinner) findViewById(R.id.asignatura_Spinner_t);
+		
+		SharedPreferences preferences = getSharedPreferences("LogIn",Context.MODE_PRIVATE);
+		String asignaturas = preferences.getString("asignaturas", "");
+		String[] array_spinner = asignaturas.split(",");
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, array_spinner);
+		sp2.setAdapter(adapter);
+		
+		// Recuperamos la posición del espinner
+		Integer posicion = prefe.getInt("posicionsp",0);
 		sp2.setSelection(posicion);
-
 	}
 
 	//Boton publicar

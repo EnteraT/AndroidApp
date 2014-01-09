@@ -2,7 +2,6 @@ package com.enterat.interfaces;
 
 import com.enterat.R;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
@@ -75,19 +74,6 @@ public class ProfesorMainActivity extends Activity {
 		//
 	}
 	
-	public void webClick(View v) {
-		String url = "http://www.escolaeldrac.com";
-		Intent i = new Intent(Intent.ACTION_VIEW);
-		i.setData(Uri.parse(url));
-		startActivity(i);
-	}
-	
-	public void facebookClick(View v) {
-		String url = "http://www.facebook.com/escolaeldrac";
-		Intent i = new Intent(Intent.ACTION_VIEW);
-		i.setData(Uri.parse(url));
-		startActivity(i);
-	}
 	public void guardar(Context c,String s) {
         SharedPreferences preferencias=getSharedPreferences("datos",c.MODE_PRIVATE);
         Editor editor=preferencias.edit();

@@ -7,6 +7,19 @@
 
 package com.enterat.bda;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.enterat.services.Conexion;
+import com.enterat.util.Constantes;
+
 public class Imparte {
 
 	//Atributos de clase
@@ -32,6 +45,49 @@ public class Imparte {
 	}
 	public void setAsignatura(Asignatura asignatura) {
 		this.asignatura = asignatura;
+	}
+
+	public String queImparteProfesorPorIdUsuario(int idUsuario){
+		
+		String asignaturas = "";
+		
+		//1.- Buscar las asignaturas que imparte un profesor por su id_usuario		
+		String sql1 = "SELECT a.codigo FROM USUARIO u, PROFESORES p, IMPARTE i, ASIGNATURA a ";
+		String sql2 = "WHERE u.id_usuario = " + idUsuario + " and u.id_usuario = p.id_usuario and p.id_profesor = i.id_profesor and i.id_asignatura = a.id_asignatura";
+		
+		List<NameValuePair> pairs = new ArrayList<NameValuePair>();
+		pairs.add(new BasicNameValuePair("sqlquery1", sql1));
+		pairs.add(new BasicNameValuePair("sqlquery2", sql2));
+				
+		JSONObject json;		
+
+		try {
+			//Obtener JSON con las asignaturas que imparte
+			json = Conexion.obtenerJsonDelServicio(pairs, "service.executeSQL.php", Constantes.SQL_CONSULTAR);
+
+			//Si se ha obtenido...
+			if(json != null)
+			{
+				if (json.has("codigo"))
+				{
+					//Guardarlas las asignaturas
+					asignaturas = json.getString("codigo");						
+				}
+			}
+
+		} catch (ClientProtocolException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		//Devolver asignaturas
+		return asignaturas;
 	}
 	
 }

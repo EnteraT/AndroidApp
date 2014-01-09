@@ -1,6 +1,7 @@
 package com.enterat.interfaces;
 
 import com.enterat.R;
+import com.enterat.bda.Imparte;
 import com.enterat.bda.Usuario;
 import com.enterat.services.Conexion;
 import com.enterat.util.Constantes;
@@ -18,6 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends Activity {
+
+	private String asignaturas = "";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -211,6 +214,8 @@ public class LoginActivity extends Activity {
 		user.setUser(preferences.getString("usuario", ""));
 		user.setPassword(preferences.getString("password", ""));
 		user.setTipo(preferences.getInt("tipo", 0));
+		
+		asignaturas = preferences.getString("asignaturas", "");		
 
 		return user;
 	}
@@ -228,6 +233,8 @@ public class LoginActivity extends Activity {
 		editor.putString("usuario", user.getUser());
 		editor.putString("password", user.getPassword());
 		editor.putInt("tipo", user.getTipo());
+		
+		editor.putString("asignaturas", asignaturas);
 
 		editor.commit();
 	}
@@ -266,14 +273,15 @@ public class LoginActivity extends Activity {
 			//Si existe el usuario
 			if(usuario != null){
 				
-				//Guardar datos en Preferences
-				guardarPreferenciasLogIn( usuario );
-				
 				//Crear mensaje login OK
 				mensaje = getResources().getString(R.string.msg_login_ok);
 								
 				//Dependiendo del tipo de usario...
 				if(usuario.getTipo() == Constantes.PROFESOR){
+					//Guardar las asignaturas que imparte dicho profesor
+					Imparte imparte = new Imparte();
+					asignaturas = imparte.queImparteProfesorPorIdUsuario( usuario.getIdUsuario() );
+					
 					//...mostrar menú de Profesor...
 					Intent intent = new Intent(context, ProfesorMainActivity.class);
 			        startActivity(intent);
@@ -285,6 +293,9 @@ public class LoginActivity extends Activity {
 				        startActivity(intent);
 					}
 				}
+				
+				//Guardar datos en Preferences
+				guardarPreferenciasLogIn( usuario );
 				
 				//Se destruye esta actividad
 				finish();
