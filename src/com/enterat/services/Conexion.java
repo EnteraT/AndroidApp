@@ -89,7 +89,8 @@ public class Conexion extends Activity {
 				int i = 0;
 				while (continuar){
 					responseString_Ant = responseString;
-					responseString = responseString_Ant.replaceFirst("codigo","asignatura" + i);
+					responseString = responseString_Ant.replaceFirst("codigo","code" + i);
+					responseString = responseString.replaceFirst("asignatura","subject" + i);
 					continuar = (!responseString.equalsIgnoreCase(responseString_Ant));
 					i++;
 				}

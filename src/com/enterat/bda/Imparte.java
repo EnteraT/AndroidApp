@@ -108,7 +108,7 @@ public class Imparte {
 		String asignaturas = "";
 		
 		//1.- Buscar las asignaturas que imparte un profesor por su id_usuario		
-		String sql1 = "SELECT a.codigo FROM USUARIO u, PROFESORES p, IMPARTE i, ASIGNATURA a ";
+		String sql1 = "SELECT a.codigo, a.asignatura FROM USUARIO u, PROFESORES p, IMPARTE i, ASIGNATURA a ";
 		String sql2 = "WHERE u.id_usuario = " + idUsuario + " and u.id_usuario = p.id_usuario and p.id_profesor = i.id_profesor and i.id_asignatura = a.id_asignatura";
 		
 		List<NameValuePair> pairs = new ArrayList<NameValuePair>();
@@ -129,11 +129,18 @@ public class Imparte {
 				
 				while (continuar){
 				
-					String txt = "asignatura"+i;
-					if (json.has(txt))
+					String txt1 = "code"+i;
+					String txt2 = "subject"+i;
+					if (json.has(txt1))
 					{
-						//Guardarlas las asignaturas
-						asignaturas = asignaturas + json.getString(txt) + ",";						
+						//Guardar CÓDIGO asignatura
+						asignaturas = asignaturas + json.getString(txt1) + " - ";
+						
+						if (json.has(txt2))
+						{
+							//Guardar NOMBRE asignatura
+							asignaturas = asignaturas + json.getString(txt2) + ",";
+						}						
 					}
 					else{
 						continuar = false;
