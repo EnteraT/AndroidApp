@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 public class ProfesorMainActivity extends Activity {
 
@@ -20,6 +21,12 @@ public class ProfesorMainActivity extends Activity {
 		
 		super.onCreate(savedInstanceState);				
 		setContentView(R.layout.activity_profesor_main);
+		
+		//
+		SharedPreferences preferences = getSharedPreferences("LogIn",Context.MODE_PRIVATE);
+		
+		TextView nombreText = (TextView)findViewById( R.id.nombre_t );
+		nombreText.setText( " " + preferences.getString("nombre", "") + " " + preferences.getString("apellidos", "") );
 	}
 
 	@Override

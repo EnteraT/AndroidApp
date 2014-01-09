@@ -21,6 +21,8 @@ import android.widget.Toast;
 public class LoginActivity extends Activity {
 
 	private String asignaturas = "";
+	private String nombre	   = "";
+	private String apellidos   = "";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -215,7 +217,9 @@ public class LoginActivity extends Activity {
 		user.setPassword(preferences.getString("password", ""));
 		user.setTipo(preferences.getInt("tipo", 0));
 		
-		asignaturas = preferences.getString("asignaturas", "");		
+		asignaturas = preferences.getString("asignaturas", "");
+		nombre		= preferences.getString("nombre", "");
+		apellidos	= preferences.getString("apellidos", "");
 
 		return user;
 	}
@@ -235,6 +239,8 @@ public class LoginActivity extends Activity {
 		editor.putInt("tipo", user.getTipo());
 		
 		editor.putString("asignaturas", asignaturas);
+		editor.putString("nombre", nombre);
+		editor.putString("apellidos", apellidos);
 
 		editor.commit();
 	}
@@ -278,9 +284,13 @@ public class LoginActivity extends Activity {
 								
 				//Dependiendo del tipo de usario...
 				if(usuario.getTipo() == Constantes.PROFESOR){
-					//Guardar las asignaturas que imparte dicho profesor
+					//Guardar las asignaturas que imparte dicho profesor...
 					Imparte imparte = new Imparte();
 					asignaturas = imparte.queImparteProfesorPorIdUsuario( usuario.getIdUsuario() );
+					
+					//..así como su nombre y apellidos
+					nombre    = imparte.getProfesor().getNombre();
+					apellidos = imparte.getProfesor().getApellidos();
 					
 					//...mostrar menú de Profesor...
 					Intent intent = new Intent(context, ProfesorMainActivity.class);

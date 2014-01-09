@@ -34,7 +34,7 @@
     <string name="txt_fecha_examen">Fecha examen</string>
     <string name="txt_fecha">Fecha </string>
     <string name="txt_nombre_profesor">Nombre del profesor</string>
-    <string name="txt_profesor">Profesor: </string>
+    <string name="txt_profesor">Profesor/a: </string>
     <string name="txt_alumno">Alumno: </string>
     <string name="txt_curso">Curso / Grupo</string>
     <string name="txt_tarea">Tareas</string>
