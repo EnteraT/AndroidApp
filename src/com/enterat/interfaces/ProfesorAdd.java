@@ -15,8 +15,10 @@ import android.widget.Toast;
 
 import com.enterat.R;
 import com.enterat.bda.Alumno;
+import com.enterat.bda.Anuncio;
 import com.enterat.bda.Asignatura;
 import com.enterat.bda.Examen;
+import com.enterat.bda.Incidencia;
 import com.enterat.bda.Tarea;
 import com.enterat.util.Constantes;
 
@@ -145,8 +147,24 @@ public class ProfesorAdd extends Activity{
 		//INSERTAR ANUNCIO
 		case Constantes.SP_ANUNCIO:			
 
-			//TODO
-			Toast.makeText(getApplicationContext(),"Anuncio publicado correctamente", Toast.LENGTH_LONG).show();
+			Anuncio anuncio = new Anuncio();				
+
+			anuncio.setId_anuncio(0);
+			anuncio.setAsignatura(asignatura);
+			anuncio.setAlumno(alumno);
+			anuncio.setContenido(contenido);
+			anuncio.setFecha(fecha);
+			anuncio.setLeido(0);				
+
+			//Insertar Tarea...
+			if (anuncio.insertarAnuncio() == 0){
+				//ERROR
+				Toast.makeText(getApplicationContext(),"Anuncio NO publicada", Toast.LENGTH_LONG).show();
+			}
+			else{
+				//INSERTADA OK
+				Toast.makeText(getApplicationContext(),"Anuncio publicada correctamente", Toast.LENGTH_LONG).show();					
+			}
 
 			break;
 			
@@ -178,8 +196,24 @@ public class ProfesorAdd extends Activity{
 		//INSERTAR INCIDENCIA
 		case Constantes.SP_INCIDENCIA: 
 
-			//TODO
-			Toast.makeText(getApplicationContext(),"Incidencia publicada correctamente", Toast.LENGTH_LONG).show();
+			Incidencia incidencia = new Incidencia();				
+
+			incidencia.setId_incidencia(0);
+			incidencia.setAsignatura(asignatura);
+			incidencia.setAlumno(alumno);
+			incidencia.setContenido(contenido);
+			incidencia.setFecha(fecha);
+			incidencia.setLeido(0);				
+
+			//Insertar Tarea...
+			if (incidencia.insertarIncidencia() == 0){
+				//ERROR
+				Toast.makeText(getApplicationContext(),"Incidencia NO publicada", Toast.LENGTH_LONG).show();
+			}
+			else{
+				//INSERTADA OK
+				Toast.makeText(getApplicationContext(),"Incidencia publicada correctamente", Toast.LENGTH_LONG).show();					
+			}
 
 			break;
 			

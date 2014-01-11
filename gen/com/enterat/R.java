@@ -9,12 +9,12 @@ package com.enterat;
 
 public final class R {
     public static final class array {
-        /** Arrays
-         */
-        public static final int array_asignaturas=0x7f060000;
         public static final int array_cursos=0x7f060001;
-        public static final int assignatura_array=0x7f060002;
-        public static final int curs_array=0x7f060003;
+        /** Arrays
+Arrays
+Arrays
+         */
+        public static final int array_insertar=0x7f060000;
     }
     public static final class attr {
     }
@@ -32,11 +32,10 @@ public final class R {
     public static final class drawable {
         public static final int app_background=0x7f020000;
         public static final int fondo=0x7f020001;
-        public static final int ic_facebook=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
-        public static final int shape_button_profesor=0x7f020004;
-        public static final int shape_button_publicar=0x7f020005;
-        public static final int shape_spinner=0x7f020006;
+        public static final int ic_launcher=0x7f020002;
+        public static final int shape_button_profesor=0x7f020003;
+        public static final int shape_button_publicar=0x7f020004;
+        public static final int shape_spinner=0x7f020005;
     }
     public static final class id {
         public static final int DatePicker_t=0x7f09001e;
@@ -54,8 +53,8 @@ public final class R {
         public static final int b_examen_t=0x7f090024;
         public static final int b_incidencia_t=0x7f090025;
         public static final int b_incidencias_p=0x7f090017;
-        public static final int b_login=0x7f09000d;
-        public static final int b_logout=0x7f09000c;
+        public static final int b_login=0x7f09000c;
+        public static final int b_logout=0x7f09000d;
         public static final int b_tareas_p=0x7f090016;
         public static final int b_tareas_t=0x7f090027;
         public static final int cerrar_sesion_t=0x7f090030;
@@ -105,15 +104,13 @@ public final class R {
         public static final int menu_main_teacher=0x7f080001;
     }
     public static final class string {
-        public static final int action_settings=0x7f05002d;
-        public static final int app_name=0x7f05002c;
-        public static final int asignaturasButton=0x7f050035;
-        public static final int assignatura_txt=0x7f050038;
         public static final int bt_anuncios=0x7f05000c;
         public static final int bt_asignatura=0x7f050007;
         public static final int bt_asignaturas=0x7f050008;
         public static final int bt_calendario=0x7f050005;
         /**  Botones
+ Botones
+ Botones
          */
         public static final int bt_circular=0x7f050002;
         public static final int bt_continuar=0x7f050010;
@@ -126,42 +123,31 @@ public final class R {
         public static final int bt_notas=0x7f050003;
         public static final int bt_tarea=0x7f050009;
         public static final int bt_tareas=0x7f05000a;
-        public static final int circularsButton=0x7f050032;
-        public static final int contingut_txt=0x7f050037;
-        public static final int control_txt=0x7f050031;
-        public static final int curs_txt=0x7f050039;
-        public static final int data_control_txt=0x7f05003b;
-        public static final int data_entrega_txt=0x7f05003a;
-        public static final int deures_txt=0x7f050030;
-        public static final int eldrac_txt=0x7f05002e;
-        public static final int facebook_txt=0x7f05002f;
-        public static final int informaciobutton=0x7f050034;
-        public static final int login_no_ok_txt=0x7f050041;
-        public static final int login_ok_txt=0x7f050040;
         public static final int menu_cerrar_sesion=0x7f050025;
         /**  Menus 
+ Menus 
+ Menus 
          */
         public static final int menu_configuracion=0x7f050024;
-        public static final int menu_settings=0x7f050036;
         public static final int msg_login_no_ok=0x7f050029;
         public static final int msg_login_ok=0x7f050028;
         public static final int msg_publicar_examen_ok=0x7f050027;
         /** Mensajes
+Mensajes
+Mensajes
          */
         public static final int msg_publicar_tarea_ok=0x7f050026;
         public static final int msg_sin_conexion=0x7f05002a;
-        public static final int notesbutton=0x7f050033;
-        public static final int publicar_control_ok_txt=0x7f05003e;
-        public static final int publicar_deure_ok_txt=0x7f05003d;
-        public static final int publicar_txt=0x7f05003c;
-        public static final int row=0x7f05002b;
-        public static final int title_activity_inicio=0x7f05003f;
         public static final int txt_alumno=0x7f050019;
         /** Comunes
+Comunes
+Comunes
          */
         public static final int txt_app_name=0x7f050000;
         public static final int txt_asignaturas=0x7f05001d;
         /**  Text View 
+ Text View 
+ Text View 
          */
         public static final int txt_clase_completa=0x7f050011;
         public static final int txt_contenido=0x7f05001e;
