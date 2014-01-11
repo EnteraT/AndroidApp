@@ -14,8 +14,15 @@ public class Alumno {
 	private String nombre;
 	private String apellidos;
 	private Curso curso;
-	private Padre padre;
 	private Profesor tutor;
+	
+	//Constructor
+	public Alumno() {
+		super();
+		
+		this.curso = new Curso();
+		this.tutor = new Profesor();
+	}
 	
 	//Getters and Setters
 	public int getId_alumno() {
@@ -41,13 +48,7 @@ public class Alumno {
 	}
 	public void setCurso(Curso curso) {
 		this.curso = curso;
-	}
-	public Padre getPadre() {
-		return padre;
-	}
-	public void setPadre(Padre padre) {
-		this.padre = padre;
-	}
+	}	
 	public Profesor getTutor() {
 		return tutor;
 	}

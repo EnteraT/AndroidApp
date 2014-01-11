@@ -2,6 +2,7 @@ package com.enterat.interfaces;
 
 import com.enterat.R;
 import com.enterat.bda.Imparte;
+import com.enterat.bda.Padre;
 import com.enterat.bda.Usuario;
 import com.enterat.services.Conexion;
 import com.enterat.util.Constantes;
@@ -23,6 +24,11 @@ public class LoginActivity extends Activity {
 	private String asignaturas = "";
 	private String nombre	   = "";
 	private String apellidos   = "";
+	private String nombrePadre		= "";
+	private String apellidosPadre	= "";
+	private String nombreAlumno		= "";
+	private String apellidosAlumno	= "";
+	private int cursoAlumno			= 0;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -220,6 +226,12 @@ public class LoginActivity extends Activity {
 		asignaturas = preferences.getString("asignaturas", "");
 		nombre		= preferences.getString("nombre", "");
 		apellidos	= preferences.getString("apellidos", "");
+		
+		nombrePadre 	= preferences.getString("nombrePadre", "");
+		apellidosPadre	= preferences.getString("apellidosPadre", "");
+		nombreAlumno	= preferences.getString("nombreAlumno", "");
+		apellidosAlumno = preferences.getString("apellidosAlumno", "");
+		cursoAlumno		= preferences.getInt("cursoAlumno", 0);
 
 		return user;
 	}
@@ -241,6 +253,12 @@ public class LoginActivity extends Activity {
 		editor.putString("asignaturas", asignaturas);
 		editor.putString("nombre", nombre);
 		editor.putString("apellidos", apellidos);
+		
+		editor.putString("nombrePadre", nombrePadre);
+		editor.putString("apellidosPadre", apellidosPadre);
+		editor.putString("nombreAlumno", nombreAlumno);
+		editor.putString("apellidosAlumno", apellidosAlumno);
+		editor.putInt("cursoAlumno", cursoAlumno);
 
 		editor.commit();
 	}
@@ -298,6 +316,17 @@ public class LoginActivity extends Activity {
 				}
 				else{
 					if(usuario.getTipo() == Constantes.PADRE){
+						
+						//Guardar datos del padre y del alumno...
+						Padre padre = new Padre();						
+						padre.obtenerDatosPadreAlumnoPorIdUsuario( usuario.getIdUsuario() );
+						
+						nombrePadre		= padre.getNombre();
+						apellidosPadre	= padre.getApellidos();
+						nombreAlumno	= padre.getAlumno().getNombre();
+						apellidosAlumno	= padre.getAlumno().getApellidos();
+						cursoAlumno		= padre.getAlumno().getCurso().getId_curso();
+						
 						//...o mostrar menú de Padre
 						Intent intent = new Intent(context, PadresMainActivity.class);
 				        startActivity(intent);
