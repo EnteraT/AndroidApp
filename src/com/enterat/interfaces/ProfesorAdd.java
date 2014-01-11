@@ -77,7 +77,7 @@ public class ProfesorAdd extends Activity{
 		SharedPreferences preferences = getSharedPreferences("LogIn",Context.MODE_PRIVATE);
 		String asignaturas = preferences.getString("asignaturas", "");
 		String[] array_spinner = asignaturas.split(",");
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, array_spinner);
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array_spinner);
 		sp2.setAdapter(adapter);
 		
 		// Recuperamos la posición del espinner
@@ -88,120 +88,136 @@ public class ProfesorAdd extends Activity{
 	//Boton publicar
 	public void publicarClick(View v) {
 
-
-		//Este es el bucle para controlar que esta checkeado el checkbox
+		//Recuperar el objeta alumno
+		Alumno alumno = new Alumno();
+		
 		CheckBox check=(CheckBox) findViewById(R.id.check_all_class);
 		if(check.isChecked()){
-
-			//TODO recuperar bien el objeto asignatura
-			Asignatura asignatura = new Asignatura();
-			asignatura.setId_asignatura(1);
-			
-			//TODO recuperar bien el objeto alumno
-			Alumno alumno = new Alumno();
-			alumno.setId_alumno(1);
-			
-			EditText conten  = (EditText)findViewById(R.id.contenido_t);
-			String contenido = conten.getText().toString();				
-			
-			DatePicker fechaPicker = (DatePicker) findViewById(R.id.DatePicker_t);								
-			
-	        Integer dobYear  = fechaPicker.getYear();
-	        Integer dobMonth = fechaPicker.getMonth();
-	        Integer dobDate  = fechaPicker.getDayOfMonth();
-	        
-	        StringBuilder sb = new StringBuilder();
-	        
-	        String separacion1 = "-";
-	        String separacion2 = "-";		        
-	        if (dobMonth < 10) separacion1 = "-0";
-	        if (dobDate < 10)  separacion2 = "-0";
-	        
-	        sb.append(dobYear.toString()).append(separacion1).append(dobMonth.toString()).append(separacion2).append(dobDate.toString());
-	        String fecha = sb.toString();		        
-	        
-			//TODO crear campo observaciones ??? en la bda está el campo...
-			String observaciones = "";
-			
-			//Recuperar el tipo de lo que queremos insertar
-			Spinner sp = (Spinner) findViewById(R.id.Tipo_Spinner_t);			
-			int tipo = sp.getSelectedItemPosition();				
-			
-			switch(tipo) {
-			case Constantes.SP_ANUNCIO: 
-				//Anuncio
-		        
-				Toast.makeText(getApplicationContext(),"Anuncio publicado correctamente", Toast.LENGTH_LONG).show();
-				
-				break;
-			case Constantes.SP_TAREA: 
-				//Tarea
-				Tarea tarea = new Tarea();				
-				
-				tarea.setId_tarea(0);
-				tarea.setAsignatura(asignatura);
-				tarea.setAlumno(alumno);
-				tarea.setContenido(contenido);
-				tarea.setFecha(fecha);
-				tarea.setObservaciones(observaciones);
-				tarea.setLeido(0);				
-				
-				//Insertar Tarea...
-				if (tarea.insertarTarea() == 0){
-					//ERROR
-					Toast.makeText(getApplicationContext(),"Tarea NO publicada", Toast.LENGTH_LONG).show();
-				}
-				else{
-					//INSERTADA OK
-					Toast.makeText(getApplicationContext(),"Tarea publicada correctamente", Toast.LENGTH_LONG).show();					
-				}
-				
-				break;
-			case Constantes.SP_INCIDENCIA: 
-				//Incidencia
-				
-				Toast.makeText(getApplicationContext(),"Incidencia publicada correctamente", Toast.LENGTH_LONG).show();
-				
-				break;
-			case Constantes.SP_EXAMEN: 
-				//Examen
-			
-				Examen examen = new Examen();				
-				
-				examen.setId_examen(0);
-				examen.setAsignatura(asignatura);
-				examen.setAlumno(alumno);
-				examen.setContenido(contenido);
-				examen.setFecha(fecha);
-				examen.setLeido(0);				
-				
-				//Insertar Examen...
-				if (examen.insertarExamen() == 0){
-					//ERROR
-					Toast.makeText(getApplicationContext(),"Examen NO publicado", Toast.LENGTH_LONG).show();
-				}
-				else{
-					//INSERTADO OK
-					Toast.makeText(getApplicationContext(),"Examen publicado correctamente", Toast.LENGTH_LONG).show();					
-				}
-				
-				break;			 
-			default: 
-				//error !!
-				break;
-			}			
-				
+			//Tarea/Examen para toda la clase --> alumno = -1
+			alumno.setId_alumno(-1);			
 		}
-		else if(check.isChecked()==false){
+		else{
+			
+			//TODO: recuperar los alumnos marcados...
+			
 			Intent intent = new Intent(this, LookFor.class);
 			startActivity(intent);
-		}
+		}		
+
+		//Recuperar el objeto asignatura
+		Spinner sp_asignatura = (Spinner) findViewById(R.id.asignatura_Spinner_t);
+		String selected = (String) sp_asignatura.getSelectedItem();
+		String[] temp = selected.split("-");
+
+		Asignatura asignatura = new Asignatura();
+		asignatura.setId_asignatura( Integer.parseInt(temp[0]) );
+
+		//Recuperar el contenido de la Tarea/Examen
+		EditText conten  = (EditText)findViewById(R.id.contenido_t);
+		String contenido = conten.getText().toString();				
+
+		//Recuperar la fecha de la Tarea/Examen
+		DatePicker fechaPicker = (DatePicker) findViewById(R.id.DatePicker_t);								
+
+		Integer dobYear  = fechaPicker.getYear();
+		Integer dobMonth = fechaPicker.getMonth() + 1; //haciendo pruebas siempre inserta el mes anterior, por eso sumo 1 ¿?¿?¿?
+		Integer dobDate  = fechaPicker.getDayOfMonth();
+
+		StringBuilder sb = new StringBuilder();
+
+		String separacion1 = "-";
+		String separacion2 = "-";		        
+		if (dobMonth < 10) separacion1 = "-0";
+		if (dobDate < 10)  separacion2 = "-0";
+
+		sb.append(dobYear.toString()).append(separacion1).append(dobMonth.toString()).append(separacion2).append(dobDate.toString());
+		String fecha = sb.toString();		        
+
+		//Recuperar las observaciones 
+		//TODO crear campo observaciones ??? en la bda está el campo...
+		String observaciones = "";
+
+		//Recuperar el tipo de lo que queremos insertar
+		Spinner sp = (Spinner) findViewById(R.id.Tipo_Spinner_t);			
+		int tipo = sp.getSelectedItemPosition();				
+
+		switch(tipo) {
+		//INSERTAR ANUNCIO
+		case Constantes.SP_ANUNCIO:			
+
+			//TODO
+			Toast.makeText(getApplicationContext(),"Anuncio publicado correctamente", Toast.LENGTH_LONG).show();
+
+			break;
+			
+		//INSERTAR TAREA
+		case Constantes.SP_TAREA: 
+			
+			Tarea tarea = new Tarea();				
+
+			tarea.setId_tarea(0);
+			tarea.setAsignatura(asignatura);
+			tarea.setAlumno(alumno);
+			tarea.setContenido(contenido);
+			tarea.setFecha(fecha);
+			tarea.setObservaciones(observaciones);
+			tarea.setLeido(0);				
+
+			//Insertar Tarea...
+			if (tarea.insertarTarea() == 0){
+				//ERROR
+				Toast.makeText(getApplicationContext(),"Tarea NO publicada", Toast.LENGTH_LONG).show();
+			}
+			else{
+				//INSERTADA OK
+				Toast.makeText(getApplicationContext(),"Tarea publicada correctamente", Toast.LENGTH_LONG).show();					
+			}
+
+			break;
+			
+		//INSERTAR INCIDENCIA
+		case Constantes.SP_INCIDENCIA: 
+
+			//TODO
+			Toast.makeText(getApplicationContext(),"Incidencia publicada correctamente", Toast.LENGTH_LONG).show();
+
+			break;
+			
+		//INSERTAR EXAMEN
+		case Constantes.SP_EXAMEN: 
+		
+			Examen examen = new Examen();				
+
+			examen.setId_examen(0);
+			examen.setAsignatura(asignatura);
+			examen.setAlumno(alumno);
+			examen.setContenido(contenido);
+			examen.setFecha(fecha);
+			examen.setLeido(0);				
+
+			//Insertar Examen...
+			if (examen.insertarExamen() == 0){
+				//ERROR
+				Toast.makeText(getApplicationContext(),"Examen NO publicado", Toast.LENGTH_LONG).show();
+			}
+			else{
+				//INSERTADO OK
+				Toast.makeText(getApplicationContext(),"Examen publicado correctamente", Toast.LENGTH_LONG).show();					
+			}
+
+			break;			 
+		default: 
+			//error !!
+			break;
+		}			
+	
 	}
 
 	@Override
 	protected void onPause() {
-		// TODO Auto-generated method stub
+
 		super.onPause();
+		
 		SharedPreferences pref = getSharedPreferences("guardado_profadd",Context.MODE_PRIVATE);
 		SharedPreferences.Editor editar=pref.edit( );
 
