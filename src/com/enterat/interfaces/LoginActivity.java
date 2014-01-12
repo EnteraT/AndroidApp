@@ -38,7 +38,8 @@ public class LoginActivity extends Activity {
 		setContentView(R.layout.activity_login);
 
 		//Restaura el formulario
-		if(Conexion.isLoggedIn()){
+		if(Usuario.isLoggedIn()){
+			
 			TextView textUser = (TextView) findViewById(R.id.userEditText);
 			TextView textPass = (TextView) findViewById(R.id.passEditText);
 			Button btLogIn = (Button) findViewById(R.id.b_login);
@@ -48,7 +49,9 @@ public class LoginActivity extends Activity {
 			textPass.setEnabled(false);
 			btLogIn.setText(getResources().getString(R.string.bt_continuar));
 			btLogOut.setEnabled(true);
+			
 		} else {
+			
 			TextView textUser = (TextView) findViewById(R.id.userEditText);
 			TextView textPass = (TextView) findViewById(R.id.passEditText);
 			Button btLogIn = (Button) findViewById(R.id.b_login);
@@ -59,36 +62,6 @@ public class LoginActivity extends Activity {
 			btLogIn.setText(getResources().getString(R.string.bt_login));
 			btLogOut.setEnabled(false);
 		}
-		
-		// Recuperar datos del usuario...
-		Usuario user = recuperarPreferenciasLogIn();
-
-		// ...si existe
-		if (user.getIdUsuario() != 0) {
-
-			// LogInAsyncTask task = new LogInAsyncTask();
-			//
-			// task.setUser( user.getUser() );
-			// task.setPassword( user.getPassword() );
-			// task.setContext( LoginActivity.this );
-			// task.execute();
-
-			Intent intent = null;
-
-			switch (user.getTipo()) {
-			case Constantes.PROFESOR:
-				intent = new Intent(this, ProfesorMainActivity.class);
-				break;
-			case Constantes.PADRE:
-				intent = new Intent(this, PadresMainActivity.class);
-				break;
-			}
-			if (intent != null)
-				startActivity(intent);
-
-			// Se destruye esta actividad
-			finish();
-		}
 	}
 
 	@Override
@@ -96,7 +69,7 @@ public class LoginActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onRestart();
 		
-		if(Conexion.isLoggedIn()){
+		if(Usuario.isLoggedIn()){
 			TextView textUser = (TextView) findViewById(R.id.userEditText);
 			TextView textPass = (TextView) findViewById(R.id.passEditText);
 			Button btLogIn = (Button) findViewById(R.id.b_login);
@@ -106,6 +79,7 @@ public class LoginActivity extends Activity {
 			textPass.setEnabled(false);
 			btLogIn.setText(getResources().getString(R.string.bt_continuar));
 			btLogOut.setEnabled(true);
+			
 		} else {
 			TextView textUser = (TextView) findViewById(R.id.userEditText);
 			TextView textPass = (TextView) findViewById(R.id.passEditText);
@@ -128,7 +102,7 @@ public class LoginActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onResume();
 		
-		if(Conexion.isLoggedIn()){
+		if(Usuario.isLoggedIn()){
 			TextView textUser = (TextView) findViewById(R.id.userEditText);
 			TextView textPass = (TextView) findViewById(R.id.passEditText);
 			Button btLogIn = (Button) findViewById(R.id.b_login);
@@ -157,21 +131,40 @@ public class LoginActivity extends Activity {
 
 	public void loginClick(View v) {
 
-		// Comprobar que hay conexi�n a INTERNET !!!
+		// Comprobar que hay conexion a INTERNET !!!
 		if (Conexion.isConnected(LoginActivity.this)) {
+			if (Usuario.isLoggedIn()) {
+				
+				//Recuperar datos del Login
+				Usuario user = recuperarPreferenciasLogIn();
+				
+				Intent intent = null;
 
-			TextView textUser = (TextView) findViewById(R.id.userEditText);
-			TextView textPass = (TextView) findViewById(R.id.passEditText);
-
-			final String user = textUser.getText().toString();
-			final String pass = textPass.getText().toString();
-
-			//
-			LogInAsyncTask task = new LogInAsyncTask();
-			task.setUser(user);
-			task.setPassword(pass);
-			task.setContext(LoginActivity.this);
-			task.execute();
+				switch (user.getTipo()) {
+				case Constantes.PROFESOR:
+					intent = new Intent(this, ProfesorMainActivity.class);
+					break;
+				case Constantes.PADRE:
+					intent = new Intent(this, PadresMainActivity.class);
+					break;
+				}
+				if (intent != null)
+					startActivity(intent);
+			}
+			else{
+				TextView textUser = (TextView) findViewById(R.id.userEditText);
+				TextView textPass = (TextView) findViewById(R.id.passEditText);
+	
+				final String user = textUser.getText().toString();
+				final String pass = textPass.getText().toString();
+	
+				//
+				LogInAsyncTask task = new LogInAsyncTask();
+				task.setUser(user);
+				task.setPassword(pass);
+				task.setContext(LoginActivity.this);
+				task.execute();
+			}
 		} else {
 			// Mostrar error de conexi�n
 			showNoConnectionWarning();
@@ -194,6 +187,8 @@ public class LoginActivity extends Activity {
 			textPass.setText("");
 			btLogIn.setText(getResources().getString(R.string.bt_login));
 			btLogOut.setEnabled(false);
+			
+			textUser.requestFocus();
 		}
 		
 	}
@@ -335,9 +330,6 @@ public class LoginActivity extends Activity {
 				
 				//Guardar datos en Preferences
 				guardarPreferenciasLogIn( usuario );
-				
-				//Se destruye esta actividad
-				finish();
 			}
 			else			
 			{

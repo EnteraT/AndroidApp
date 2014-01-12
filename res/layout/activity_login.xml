@@ -1,5 +1,6 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -53,24 +54,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
-            android:gravity="center"
             android:alpha="0.75"
+            android:gravity="center"
             android:onClick="loginClick"
             android:text="@string/bt_login" />
 
+        <Button
+            android:id="@+id/b_logout"
+            style="@style/st_main_button_publicar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="65dp"
+            android:alpha="0.75"
+            android:gravity="center"
+            android:onClick="logoutClick"
+            android:text="@string/bt_logout" />
+
     </LinearLayout>
 
-    <Button
-        android:id="@+id/b_logout"
-        style="@style/st_main_button_publicar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/linearLayout1"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="65dp"
-        android:gravity="center"
-        android:alpha="0.75"
-        android:onClick="logoutClick"
-        android:text="@string/bt_logout" />
-
-</RelativeLayout>
+</LinearLayout>

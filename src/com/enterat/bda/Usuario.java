@@ -15,13 +15,22 @@ import com.enterat.services.Conexion;
 import com.enterat.util.Constantes;
 
 public class Usuario {
-
+	public static boolean LoggedIn;
+	
 	private int idUsuario   = 0;
 	private String user	    = "";
 	private String password = "";
 	private int tipo;
 	private Date fecha;
 	
+	public static boolean isLoggedIn() {
+		return LoggedIn;
+	}
+
+	public static void setLoggedIn(boolean loggedIn) {
+		LoggedIn = loggedIn;
+	}
+
 	public int getIdUsuario() {
 		return idUsuario;
 	}
@@ -89,7 +98,10 @@ public class Usuario {
 				if (json.has("tipo"))
 				{							
 					user.setTipo( Integer.parseInt(json.getString("tipo")) );						
-				}				
+				}	
+				
+				//Login correcto
+				Usuario.setLoggedIn(true);
 			}	
 				
 		} catch (ClientProtocolException c)	{
@@ -116,5 +128,4 @@ public class Usuario {
 		//Devolver el usuario identificado
 		return user;
 	}
-	
 }

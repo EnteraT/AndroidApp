@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.http.HttpEntity;
@@ -14,6 +15,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -24,18 +26,19 @@ import android.net.NetworkInfo;
 
 import com.enterat.services.Conexion;
 import com.enterat.util.Constantes;
+import com.enterat.bda.Usuario;
 
 public class Conexion extends Activity {
 	
-	public static boolean LoggedIn;
-
-	public static boolean isLoggedIn() {
-		return LoggedIn;
-	}
-
-	public static void setLoggedIn(boolean loggedIn) {
-		LoggedIn = loggedIn;
-	}
+//	public static boolean LoggedIn;
+//
+//	public static boolean isLoggedIn() {
+//		return LoggedIn;
+//	}
+//
+//	public static void setLoggedIn(boolean loggedIn) {
+//		LoggedIn = loggedIn;
+//	}
 
 	// URL del directorio donde se encuentran los servicios del servidor
 	private final static String url = "http://www.appservices.eshost.es/servicioweb/";
@@ -99,6 +102,18 @@ public class Conexion extends Activity {
 				responseString = "{" + responseString + "}";
 			}
 			
+			switch(servicio) {
+			case Constantes.SERV_IMPARTE:
+				break;
+			case Constantes.SERV_LOGIN:
+				break;
+			case Constantes.SERV_HIJOS:
+				
+				break;
+			case Constantes.SERV_OTROS:
+				break;
+			}
+			
 			//
 			json = new JSONObject(responseString);			
 		}	
@@ -118,7 +133,9 @@ public class Conexion extends Activity {
 //		editor.commit();
 
 		// Si procede, cerrar las conexiones activas
-		setLoggedIn(false);
+		if (Usuario.isLoggedIn())
+			Usuario.setLoggedIn(false);
+		
 		
 		// Todo OK
 		return 0;
