@@ -3,15 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-	<ScrollView
-        android:id="@+id/scrollView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
+   
 
     <Spinner
         android:id="@+id/asignaturas_spinner"
@@ -20,60 +13,70 @@
         android:layout_height="wrap_content"
         android:alpha="0.75" />
             
-    <TabHost
-        android:id="@android:id/tabhost"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-
-            <TabWidget
-                android:id="@android:id/tabs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
-            </TabWidget>
-            
-            <FrameLayout
-                android:id="@android:id/tabcontent"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-                <LinearLayout
-                    android:id="@+id/tab_asignaturas_tareas"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical" >
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/tab_asignaturas_incidencias"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical" >
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/tab_asignaturas_anuncios"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical" >
-                </LinearLayout>
-                
-                <LinearLayout
-                    android:id="@+id/tab_asignaturas_examenes"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical" >
-                </LinearLayout>
-            </FrameLayout>
-
-        </LinearLayout>
-    </TabHost>
-
+	<LinearLayout
+    	android:orientation="vertical"
+    	android:layout_height="match_parent"
+    	android:layout_width="match_parent">
+ 
+		<TabHost android:id="@android:id/tabhost"
+    		android:layout_width="match_parent"
+     		android:layout_height="match_parent">
+ 
+     		<LinearLayout
+            	android:orientation="vertical"
+            	android:layout_width="match_parent"
+            	android:layout_height="match_parent" >
+ 
+	         <TabWidget android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:id="@android:id/tabs" />
+	 
+	         <FrameLayout android:layout_width="match_parent"
+	                  android:layout_height="match_parent"
+	                  android:id="@android:id/tabcontent" >
+	 
+	         <LinearLayout android:id="@+id/anuncios_tab"
+	              android:orientation="vertical"
+	              android:layout_width="match_parent"
+	              android:layout_height="match_parent" >
+	 
+	                <ListView android:id="@+id/anuncios_listView"
+	                      android:layout_width="wrap_content"
+	                      android:layout_height="wrap_content" />
+	        </LinearLayout>
+ 
+	        <LinearLayout android:id="@+id/tareas_tab"
+	              android:orientation="vertical"
+	              android:layout_width="match_parent"
+	              android:layout_height="match_parent" >
+	 
+	                <ListView android:id="@+id/tareas_listView"
+	                      android:layout_width="wrap_content"
+	                      android:layout_height="wrap_content" />
+	        </LinearLayout>
+	        
+	        <LinearLayout android:id="@+id/incidencias_tab"
+	              android:orientation="vertical"
+	              android:layout_width="match_parent"
+	              android:layout_height="match_parent" >
+	 
+	                <ListView android:id="@+id/incidencias_listView"
+	                      android:layout_width="wrap_content"
+	                      android:layout_height="wrap_content" />
+	        </LinearLayout>
+	        
+	        <LinearLayout android:id="@+id/examenes_tab"
+	              android:orientation="vertical"
+	              android:layout_width="match_parent"
+	              android:layout_height="match_parent" >
+	 
+	                <ListView android:id="@+id/examenes_listView"
+	                      android:layout_width="wrap_content"
+	                      android:layout_height="wrap_content" />
+	        </LinearLayout>
+	        </FrameLayout>
+	        </LinearLayout> 
+        </TabHost>
+        
     </LinearLayout>
-    </ScrollView>
-
 </LinearLayout>
